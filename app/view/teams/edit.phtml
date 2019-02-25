@@ -1,11 +1,11 @@
 <form class="log-in-form" method="post" 
-action="<?php echo App::config("url") ?>teams/edit/<?php echo Request::post("id") ?>">
+action="<?php echo App::config("url") ?>team/edit/<?php echo Request::post("id") ?>">
 
  <?php include_once "control.phtml" ?>
  
  <div class="grid-x">
     <div class="large-6 columns" style="padding: 10px;">
-        <a href="<?php echo App::config("url") ?>teams/index" class="alert button expanded">
+        <a href="<?php echo App::config("url") ?>team/index" class="alert button expanded">
            Abort
         </a>
     </div>
@@ -16,4 +16,4 @@ action="<?php echo App::config("url") ?>teams/edit/<?php echo Request::post("id"
   
 
 </form>
-<?php echo $poruka ?>
+<?php echo $message ?>

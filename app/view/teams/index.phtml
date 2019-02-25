@@ -1,4 +1,4 @@
-<a href="<?php echo App::config("url") ?>teams/prepareadd" class="success button expanded">
+<a href="<?php echo App::config("url") ?>team/prepareadd" class="success button expanded">
     Add new Team
 </a>
 <table>
@@ -25,13 +25,13 @@
             <td><?php echo $team->city ?></td>
 
             <td> 
-                <a href="<?php echo App::config("url") ?>teams/prepareedit/<?php echo $teams->id ?>">
+                <a href="<?php echo App::config("url") ?>team/prepareedit/<?php echo $team->id ?>">
                     <i class="fas fa-edit fa-2x"></i>
                 </a>
 
                 <?php if($team->total==0): ?>
                     <a style="color: red;"
-                     href="<?php echo App::config("url") ?>teams/delete/<?php echo $teams->id ?>">
+                     href="<?php echo App::config("url") ?>team/delete/<?php echo $team->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
                 <?php endif; ?>

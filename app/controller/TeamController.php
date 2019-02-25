@@ -65,15 +65,6 @@ class TeamController extends ProtectedController
         }
 
 
-        if(intval(Request::post("manager"))<=0){
-            return "Trajanje nije broj ili je manje od nula";
-        }
-
-        if(Request::post("ground")===""){
-            return "Cijena obavezno";
-        }
-
-
         return true;
     }
 
