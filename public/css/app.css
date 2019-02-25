@@ -1,0 +1,21 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.large-10.medium-10.small-12.columns>h1{
+    width: 100%;
+    text-align: center;
+}
+
+.fa-edit{
+    color: silver;
+}
+
+.callout h1 {
+    font-size: 2rem;
+}
+.operators {
+    text-align: center;
+    margin-right: 15px;
+}

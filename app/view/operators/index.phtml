@@ -1,0 +1,15 @@
+<div class="grid-x">
+    <?php foreach($operator as $operator): ?>
+    <div class="cell large-3">
+        <div class="success callout operators">
+            <h1><?php echo $operator->name?>
+    <br />
+    <?php echo $operator->surname?>
+    </h1>
+    <?php echo $operator->email?>
+
+    </div>
+    </div>
+
+    <?php endforeach; ?>
+</div>

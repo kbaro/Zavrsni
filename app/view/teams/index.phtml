@@ -1,0 +1,44 @@
+<a href="<?php echo App::config("url") ?>teams/prepareadd" class="success button expanded">
+    Add new Team
+</a>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Manager</th>
+            <th>Ground</th>
+            <th>Ground Capacity</th>
+            <th>Since</th>
+            <th>Trophy</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($teams as $team): ?>
+        <tr>
+            <td><?php echo $team->title ?></td>
+            <td><?php echo $team->manager ?></td>
+            <td><?php echo $team->ground ?></td>
+            <td><?php echo $team->ground_capacity ?></td>
+            <td><?php echo $team->since ?></td>
+            <td><?php echo $team->trophy ?></td>
+            <td><?php echo $team->city ?></td>
+
+            <td> 
+                <a href="<?php echo App::config("url") ?>teams/prepareedit/<?php echo $teams->id ?>">
+                    <i class="fas fa-edit fa-2x"></i>
+                </a>
+
+                <?php if($team->total==0): ?>
+                    <a style="color: red;"
+                     href="<?php echo App::config("url") ?>teams/delete/<?php echo $teams->id ?>">
+                        <i class="fas fa-trash fa-2x"></i>
+                    </a>
+                <?php endif; ?>
+            
+             </td>
+        </tr>
+        <?php endforeach;?>
+    </tbody>
+    
+</table>
