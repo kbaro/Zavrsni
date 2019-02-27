@@ -11,6 +11,9 @@
 .fa-edit{
     color: forestgreen;
 }
+.fa-delete{
+    color: indianred;
+}
 
 .callout h1 {
     font-size: 2rem;
@@ -18,4 +21,12 @@
 .operators {
     text-align: center;
     margin-right: 15px;
+    background-color: lightskyblue !important;
+}
+body{
+    background-color: lightskyblue;
+
+}
+a:hover {
+    background-color: lightskyblue;
 }

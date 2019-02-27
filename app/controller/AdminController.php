@@ -3,7 +3,7 @@
 class AdminController{
     function signin(){
         $view = new View();
-        $view->render('prijava',["message"=>""]);
+        $view->render('signin',["message"=>""]);
     }
 
     function login()
@@ -28,11 +28,11 @@ class AdminController{
 
                 $view->render('index',["message"=>"Welcome!"]);
             }else{
-                $view->render('login',["message"=>"Email or password do not match!"]);
+                $view->render('signin',["message"=>"Email or password do not match!"]);
             }
         }else{
-            $view->render('login',["message"=>"Wrong E-mail!"]);
-        }
+                          $view->render('signin',["message"=>"Wrong E-mail!"]);
+                             }
 
 
     }

@@ -7,7 +7,7 @@ class PlayerController extends ProtectedController
 
         $control = $this->control();
         if($control===true){
-            Team::add();
+            Player::add();
             $this->index();
         }else{
             $view = new View();
@@ -26,7 +26,7 @@ class PlayerController extends ProtectedController
         $_POST["id"]=$id;
         $control = $this->control();
         if($control===true){
-            Team::update($id);
+            Player::update($id);
             $this->index();
         }else{
             $view = new View();
@@ -82,7 +82,7 @@ class PlayerController extends ProtectedController
     function prepareedit($id)
     {
         $view = new View();
-        $team = Team::find($id);
+        $player = Player::find($id);
         $_POST["name"]=$player->name;
         $_POST["surname"]=$player->surname;
         $_POST["nationality"]=$player->nationality;
@@ -105,7 +105,7 @@ class PlayerController extends ProtectedController
         $view->render(
             'players/index',
             [
-                "players"=>Team::read()
+                "players"=>Player::read()
             ]
         );
     }

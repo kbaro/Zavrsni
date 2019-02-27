@@ -2499,11 +2499,11 @@ ul.no-bullet, ol.no-bullet {
       background-color: #5e5e5e;
       color: #fefefe; }
   .button.success {
-    background-color: #3adb76;
-    color: #0a0a0a; }
+    background-color: lightskyblue;
+    color: black; }
     .button.success:hover, .button.success:focus {
-      background-color: #22bb5b;
-      color: #0a0a0a; }
+      background-color: lightblue;
+      color: black; }
   .button.warning {
     background-color: #ffae00;
     color: #0a0a0a; }
