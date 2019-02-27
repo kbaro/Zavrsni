@@ -7,7 +7,7 @@ class OperatorController extends ProtectedController{
         $view->render(
             'operators/index',
             [
-            "operator"=>Operator::read()
+            "operators"=>Operator::read()
             ]
         );
     }

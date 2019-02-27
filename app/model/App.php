@@ -15,9 +15,9 @@ final class App{
            $controller = "Index";
        }else{
            if($pathParts[0]==="contact"){
-            $controller = "contact";
+            $controller = "Contact";
            }elseif($pathParts[0]==="about"){
-            $controller = "about";
+            $controller = "About";
            }else{
             $controller=ucfirst(strtolower($pathParts[0]));
            }
