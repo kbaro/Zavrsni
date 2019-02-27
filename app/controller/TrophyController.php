@@ -106,7 +106,7 @@ class TrophyController extends ProtectedController
         $view->render(
             'trophys/index',
             [
-                "teams"=>Trophy::read()
+                "trophys"=>Trophy::read()
             ]
         );
     }

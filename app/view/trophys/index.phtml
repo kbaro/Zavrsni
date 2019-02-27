@@ -1,0 +1,45 @@
+<a href="<?php echo App::config("url") ?>trophy/prepareadd" class="success button expanded">
+    ADD NEW TROPHY
+</a>
+<table>
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>League name</th>
+            <th>Cup name</th>
+            <th>Supercup name</th>
+            <th>Times won league</th>
+            <th>Times won cup</th>
+            <th>Times won supercup</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($trophys as $trophy): ?>
+        <tr>
+            <td><?php echo $trophy->team ?></td>
+            <td><?php echo $trophy->league_name ?></td>
+            <td><?php echo $trophy->cup_name ?></td>
+            <td><?php echo $trophy->supercup_name ?></td>
+            <td><?php echo $trophy->times_won_league ?></td>
+            <td><?php echo $trophy->times_won_cup ?></td>
+            <td><?php echo $trophy->times_won_supercup ?></td>
+
+            <td> 
+                <a href="<?php echo App::config("url") ?>trophy/prepareedit/<?php echo $trophy->id ?>">
+                    <i class="fas fa-edit fa-2x"></i>
+                </a>
+
+                <?php if($trophy->total==0): ?>
+                    <a style="color: red;"
+                     href="<?php echo App::config("url") ?>trophy/delete/<?php echo $trophy->id ?>">
+                        <i class="fas fa-trash fa-2x"></i>
+                    </a>
+                <?php endif; ?>
+            
+             </td>
+        </tr>
+        <?php endforeach;?>
+    </tbody>
+    
+</table>

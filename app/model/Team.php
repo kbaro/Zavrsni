@@ -17,6 +17,9 @@ class Team
                     a.since,
                     a.trophy,
                     a.city,
+                    b.times_won_league,
+                    b.times_won_cup,
+                    b.times_won_supercup,
                     count(b.id) as total from 
                     team a left join trophy b on a.id=b.team
                     group by 
@@ -77,6 +80,7 @@ class Team
         $expression->execute($data);
     }
 
+
     private static function data(){
         return [
             "title"=>Request::post("title"),
@@ -88,6 +92,8 @@ class Team
             "city"=>Request::post("city")
         ];
     }
+
+
 
 
 }

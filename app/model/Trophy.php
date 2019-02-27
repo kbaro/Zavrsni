@@ -10,25 +10,25 @@ class Trophy
         
                     select 
                     a.id,
-                    a.title,
-                    a.manager,
-                    a.ground,
-                    a.ground_capacity,
-                    a.since,
-                    a.trophy,
-                    a.city,
+                    a.team,
+                    a.league_name,
+                    a.cup_name,
+                    a.supercup_name,
+                    a.times_won_league,
+                    a.times_won_cup,
+                    a.times_won_supercup,
                     count(b.id) as total from 
-                    trophy a left join trophy b on a.id=b.trophy
+                    trophy a left join team b on a.id=b.trophy
                     group by 
                     a.id,
-                    a.title,
-                    a.manager,
-                    a.ground,
-                    a.ground_capacity,
-                    a.since,
-                    a.trophy,
-                    a.city
-                    order by a.title
+                    a.team,
+                    a.league_name,
+                    a.cup_name,
+                    a.supercup_name,
+                    a.times_won_league,
+                    a.times_won_cup,
+                    a.times_won_supercup
+                    order by a.team
 
         ");
         $expression->execute();
@@ -46,8 +46,8 @@ class Trophy
     public static function add()
     {
         $db = Db::getInstance();
-        $expression = $db->prepare("insert into trophy (title,manager,ground,ground_capacity,since,trophy,city) 
-        values (:title,:manager,:ground,:ground_capacity,:since,:trophy,:city)");
+        $expression = $db->prepare("insert into trophy (team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) 
+        values (:team,:league_name,:cup_name,:supercup_name,:times_won_league,:times_won_cup,:times_won_supercup)");
         $expression->execute(self::data());
     }
 
@@ -55,13 +55,13 @@ class Trophy
     {
         $db = Db::getInstance();
         $expression = $db->prepare("update trophy set 
-        title=:title,
-        manager=:manager,
-        ground=:ground,
-        ground_capacity=:ground_capacity,
-        since=:since,
-        trophy=:trophy,
-        city=:city
+        team=:team,
+        league_name=:league_name,
+        cup_name=:cup_name,
+        supercup_name=:supercup_name,
+        times_won_league=:times_won_league,
+        times_won_cup=:times_won_cup,
+        times_won_supercup=:times_won_supercup
         where id=:id");
         $data = self::data();
         $data["id"]=$id;
@@ -79,13 +79,13 @@ class Trophy
 
     private static function data(){
         return [
-            "title"=>Request::post("title"),
-            "manager"=>Request::post("manager"),
-            "ground"=>Request::post("ground"),
-            "ground_capacity"=>Request::post("ground_capacity"),
-            "since"=>Request::post("since"),
-            "trophy"=>Request::post("trophy"),
-            "city"=>Request::post("city")
+            "team"=>Request::post("team"),
+            "league_name"=>Request::post("league_name"),
+            "cup_name"=>Request::post("cup_name"),
+            "supercup_name"=>Request::post("supercup_name"),
+            "times_won_league"=>Request::post("times_won_league"),
+            "times_won_cup"=>Request::post("times_won_cup"),
+            "times_won_supercup"=>Request::post("times_won_supercup")
         ];
     }
 

@@ -22,7 +22,7 @@ create table player(
 	nationality varchar(255),
 	position varchar(255),
 	salary DECIMAL(18,2),
-    team int not null
+    team int
 );
 
 create table trophy(

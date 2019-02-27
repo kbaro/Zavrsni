@@ -16,8 +16,8 @@ class Player
                     a.position,
                     a.salary,
                     a.team,
-                    count(b.id) as total from 
-                    player a left join team b on a.id=b.player
+                    b.title
+                    from player as a left join team as b on b.id = a.team
                     group by 
                     a.id,
                     a.name,
@@ -26,10 +26,11 @@ class Player
                     a.position,
                     a.salary,
                     a.team
-                    order by a.name
+                    order by a.team
 
         ");
         $expression->execute();
+        //echo "<pre>";print_r($expression->fetchAll());exit;
         return $expression->fetchAll();
     }
 

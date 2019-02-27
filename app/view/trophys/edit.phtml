@@ -1,7 +1,19 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kristijan
- * Date: 27.2.2019.
- * Time: 14:59
- */
+<form class="log-in-form" method="post" 
+action="<?php echo App::config("url") ?>trophy/edit/<?php echo Request::post("id") ?>">
+
+ <?php include_once "control.phtml" ?>
+ 
+ <div class="grid-x">
+    <div class="large-6 columns" style="padding: 10px;">
+        <a href="<?php echo App::config("url") ?>trophy/index" class="alert button expanded">
+           Abort
+        </a>
+    </div>
+    <div class="large-6 columns"  style="padding: 10px;">
+        <input type="submit" class="success button expanded" value="Edit" />
+    </div>
+ </div>
+  
+
+</form>
+<?php echo $message ?>

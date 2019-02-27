@@ -10,6 +10,7 @@
         <th>Position</th>
         <th>Salary</th>
         <th>Team</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -20,19 +21,20 @@
             <td><?php echo $player->nationality ?></td>
             <td><?php echo $player->position ?></td>
             <td><?php echo $player->salary ?></td>
-            <td><?php echo $player->team ?></td>
+            <td><?php echo $player->title ?></td>
 
             <td>
                 <a href="<?php echo App::config("url") ?>player/prepareedit/<?php echo $player->id ?>">
                     <i class="fas fa-edit fa-2x"></i>
                 </a>
 
-                <?php if($player->total==0): ?>
-                    <a style="color: red;"
-                       href="<?php echo App::config("url") ?>player/delete/<?php echo $player->id ?>">
+                
+                    <a
+                     href="<?php echo App::config("url") ?>player/delete/<?php echo $player->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
-                <?php endif; ?>
+               
+            
 
             </td>
         </tr>
