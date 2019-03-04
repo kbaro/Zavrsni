@@ -3,8 +3,9 @@
 class Player
 {
 
-    public static function read()
+    public static function read($page)
     {
+        $perPage=7;
         $db = Db::getInstance();
         $expression = $db->prepare("
         
@@ -27,6 +28,7 @@ class Player
                     a.salary,
                     a.team
                     order by a.team
+                    limit ". (($page*$perPage)- $perPage)  . ",$perPage
 
         ");
         $expression->execute();
