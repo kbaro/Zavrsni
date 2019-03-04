@@ -2256,11 +2256,11 @@ h6, .h6 {
 
 a {
   line-height: inherit;
-  color: #1779ba;
+  color: #595775;
   text-decoration: none;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #1468a0; }
+    color: #f1e0d6; }
   a img {
     border: 0; }
 
@@ -2468,12 +2468,12 @@ ul.no-bullet, ol.no-bullet {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #1779ba;
+  background-color: #aba6bf;
   color: #fefefe; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #14679e;
+    background-color: #595775;
     color: #fefefe; }
   .button.tiny {
     font-size: 0.6rem; }
@@ -2499,11 +2499,11 @@ ul.no-bullet, ol.no-bullet {
       background-color: #5e5e5e;
       color: #fefefe; }
   .button.success {
-    background-color: lightskyblue;
-    color: black; }
+    background-color: #aba6bf;
+    color: #f1e0d6; }
     .button.success:hover, .button.success:focus {
-      background-color: lightblue;
-      color: black; }
+      background-color: #595775;
+      color: #f1e0d6; }
   .button.warning {
     background-color: #ffae00;
     color: #0a0a0a; }
@@ -3371,7 +3371,7 @@ select {
   padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
-  background-color: white;
+  background-color: #aba6bf;
   color: #0a0a0a; }
   .callout > :first-child {
     margin-top: 0; }
@@ -5386,7 +5386,7 @@ a.thumbnail {
           flex-wrap: wrap; }
   .top-bar,
   .top-bar ul {
-    background-color: #e6e6e6; }
+    background-color: #aba6bf; }
   .top-bar input {
     max-width: 200px;
     margin-right: 1rem; }

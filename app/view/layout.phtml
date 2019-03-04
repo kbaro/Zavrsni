@@ -8,25 +8,30 @@
     <div class="grid-container">
     <?php include_once "menu.phtml" ?>
     <div class="grid-x">
-        <div class="large-1 medium-1 columns hide-for-small-only">
+        <div class="large-1 medium-1 small-1 columns">
         <a href="<?php echo App::config("url")."index" ?>"><img class="img" src="<?php echo App::config("url") ?>public/img/logo.png" alt="Logo"></a>
         </div>
-        <div class="large-11 medium-11 small-12 columns">
+        <div class="large-11 medium-11 small-11 columns">
             <a href="<?php echo App::config("url")."index" ?>"><p class="title"> <?php echo App::config("AppName") ?></p></a>
         </div>
     </div>
 
   
-       
-        <div class="callout" style="min-height: 400px;">
-            <?php echo $content ?>
-           
-        </div>
-       
-        <div class="callout">
-           &copy; Football League  <?php echo date("Y") ?>
-        </div>
 
+
+            <?php echo $content ?>
+
+
+
+        <div class="footer">
+
+
+        <div class="callout">
+
+           &copy; Football League  <?php echo date("Y") ?>
+
+         </div>
+            </div>
 
 
 

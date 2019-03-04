@@ -1,16 +1,23 @@
 <form class="log-in-form" method="post" 
 action="<?php echo App::config("url") ?>admin/login">
 
-  <label>Email
-    <input type="email" name="email" placeholder="baro.kristijan@gmail.com" value="<?php  echo Request::post("email") ?>">
-  </label>
+  <label>Email  </label>
+        <input type="email" name="email" value="<?php  if(isset ($_POST["email"])) {
+        echo Request::post("email");
+        }else {
+            echo App::config("dev") ? "baro.kristijan@gmail.com" : "";
+        } ?>">
 
-  <label>Password
-    <input type="password" name="password" placeholder="e">
 
-  </label>
+  <label>Password  </label>
+    <input type="password" name="password"  value="<?php if(!isset($_POST["email"])){
+        echo App::config("dev") ? "e" : "";
+    }?>
+        ">
+
+
  
-  <p><input type="submit" class="button expanded" value="Log in" /></p>
+   <button type="submit" class="button expanded" value="Log in">LOGIN</button>
 
 </form>
 <?php echo $message ?>

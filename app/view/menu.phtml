@@ -8,7 +8,7 @@
         <div class="top-bar" id="example-menu">
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
-
+                <?php if(!Session::getInstance()->isLogiran()): ?>
                     <li>
                         <a href="<?php echo App::config("url")."index" ?>">Home</a>
                     </li>
@@ -19,7 +19,7 @@
                         <a href="<?php echo App::config("url")."contact" ?>">Contact</a>
                     </li>
 
-                    <?php if(Session::getInstance()->isLogiran()): ?>
+                    <?php else:?>
                     <li>
                         <a href="<?php echo App::config("url")."team/index" ?>">Teams</a>
                     </li>

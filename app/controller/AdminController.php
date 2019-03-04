@@ -1,9 +1,9 @@
 <?php
 
 class AdminController{
-    function signin(){
+    function singin(){
         $view = new View();
-        $view->render('signin',["message"=>""]);
+        $view->render('login',["message"=>""]);
     }
 
     function login()
@@ -26,16 +26,20 @@ class AdminController{
 
                 Session::getInstance()->login($user);
 
-                $view->render('index',["message"=>"Welcome!"]);
+                $view->render('index',["message"=>"Welcome"]);
             }else{
-                $view->render('signin',["message"=>"Email or password do not match!"]);
+                $view->render('login',["message"=>"Email or password do not match"]);
             }
         }else{
-                          $view->render('signin',["message"=>"Wrong E-mail!"]);
+                          $view->render('login',["message"=>"Wrong E-mail"]);
                              }
 
 
-    }
+
+    
+    //
+
+  }
 
     function logout()
     {

@@ -14,7 +14,7 @@
     text-align: center;
 }
 .fa-edit{
-    color: lightskyblue;
+    color: #595775;
 }
 .fa-trash{
     color: indianred;
@@ -26,14 +26,19 @@
 .operators {
     text-align: center;
     margin-right: 15px;
-    background-color: #38003c !important;
+    background-color: #aba6bf !important;
 }
 body{
-    background-color: lightskyblue;
+    background-color: #595775;
 
 }
 a:hover {
-    background-color: lightblue;
+    background-color: #595775;
 }
+.footer{
+    text-align:right;
 
+    bottom: 0;
+    right: 0;
+}
 
