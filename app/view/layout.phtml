@@ -9,10 +9,10 @@
     <?php include_once "menu.phtml" ?>
     <div class="grid-x">
         <div class="large-1 medium-1 columns hide-for-small-only">
-        <img style="padding: 10px;" src="<?php echo App::config("url") ?>public/img/logo.png" alt="Logo">
+        <a href="<?php echo App::config("url")."index" ?>"><img class="img" src="<?php echo App::config("url") ?>public/img/logo.png" alt="Logo"></a>
         </div>
         <div class="large-11 medium-11 small-12 columns">
-            <h1 style="width: 100%; text-align: center; padding-top:15px;"><?php echo App::config("AppName") ?></h1>
+            <a href="<?php echo App::config("url")."index" ?>"><p class="title"> <?php echo App::config("AppName") ?></p></a>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
         </div>
        
         <div class="callout">
-           &copy; Football League <?php echo date("Y") ?>
+           &copy; Football League  <?php echo date("Y") ?>
         </div>
 
 
