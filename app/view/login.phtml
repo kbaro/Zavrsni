@@ -1,7 +1,7 @@
 <form class="log-in-form" method="post" 
 action="<?php echo App::config("url") ?>admin/login">
 
-  <label>Email  </label>
+  <label>Email</label>
         <input type="email" name="email" value="<?php  if(isset ($_POST["email"])) {
         echo Request::post("email");
         }else {
@@ -9,11 +9,10 @@ action="<?php echo App::config("url") ?>admin/login">
         } ?>">
 
 
-  <label>Password  </label>
+  <label>Password</label>
     <input type="password" name="password"  value="<?php if(!isset($_POST["email"])){
         echo App::config("dev") ? "e" : "";
-    }?>
-        ">
+    }?>">
 
 
  

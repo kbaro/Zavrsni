@@ -24,8 +24,8 @@ class AdminController{
                 $view->render('login',["message"=>"Email or password do not match"]);
             }
         }else{
-                          $view->render('login',["message"=>"Wrong E-mail"]);
-                             }
+               $view->render('login',["message"=>"Wrong E-mail"]);
+         }
     //
   }
     function logout()
