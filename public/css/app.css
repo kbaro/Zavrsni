@@ -1,5 +1,5 @@
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Martel', serif;
 }
 
 .title{
@@ -29,16 +29,15 @@
     background-color: #aba6bf !important;
 }
 body{
-    background-color: #595775;
+    background: radial-gradient(circle,lightskyblue,whitesmoke);
+
 
 }
-a:hover {
-    background-color: #595775;
-}
+
 .footer{
     text-align:right;
     bottom: 0;
     left: 0;
     right: 0;
 }
-
+@include menu-icons;

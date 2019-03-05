@@ -1,6 +1,8 @@
+
 <a href="<?php echo App::config("url") ?>team/prepareadd" class="success button expanded">
     ADD NEW TEAM
 </a>
+
 <table>
     <thead>
         <tr>
@@ -35,7 +37,7 @@
                 </a>
 
                 <?php if($team->total==0): ?>
-                    <a style="color: red;"
+                    <a style="margin-left: 10px"
                      href="<?php echo App::config("url") ?>team/delete/<?php echo $team->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
@@ -45,5 +47,5 @@
         </tr>
         <?php endforeach;?>
     </tbody>
-    
+
 </table>

@@ -5076,13 +5076,13 @@ table {
   tbody,
   tfoot {
     border: 1px solid #f1f1f1;
-    background-color: #fefefe; }
+     }
   caption {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold; }
   thead {
-    background: #f8f8f8;
-    color: #0a0a0a; }
+    background: #595775;
+    color: white; }
   tfoot {
     background: #f1f1f1;
     color: #0a0a0a; }

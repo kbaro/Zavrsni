@@ -99,6 +99,8 @@ class PlayerController extends ProtectedController
         );
     }
 
+
+
     function index($page = 1)
     {
         if ($page <= 0) {

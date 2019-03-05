@@ -10,7 +10,8 @@
         <th>Position</th>
         <th>Salary</th>
         <th>Team</th>
-        <th></th>
+        <th>Edit / Delete</th>
+
     </tr>
     </thead>
     <tbody>
@@ -29,7 +30,7 @@
                 </a>
 
                 
-                    <a
+                    <a style="margin-left: 20px;"
                      href="<?php echo App::config("url") ?>player/delete/<?php echo $player->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
@@ -38,6 +39,8 @@
 
             </td>
         </tr>
+
+
     <?php endforeach;?>
     <nav aria-label="Pagination">
         <ul class="pagination text-center">

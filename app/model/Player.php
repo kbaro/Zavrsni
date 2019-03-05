@@ -77,6 +77,7 @@ class Player
         $expression->execute($data);
     }
 
+
     private static function data(){
         return [
             "name"=>Request::post("name"),
