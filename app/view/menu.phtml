@@ -45,17 +45,20 @@
             </div>
             <div class="top-bar-right">
                 <ul class="menu">
-                    <li>
-                        <a href="<?php echo App::config("url") ?>user/register">Register</a>
-                    </li>
+
                     <li>
                         <?php if(Session::getInstance()->isLogiran()): ?>
                         <a href="<?php echo App::config("url") ?>admin/logout">Logout
                             <?php echo Session::getInstance()->getUser()->nameSurname ?>
                         </a>
                         <?php else:?>
+                        <li>
+                        <a href="<?php echo App::config("url") ?>user/register">Register</a>
+                    </li>
                         <a href="<?php echo App::config("url") ?>admin/login">Login</a>
+
                         <?php endif;?>
+
                     </li>
                 </ul>
             </div>

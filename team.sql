@@ -41,6 +41,18 @@ alter table player add foreign key (team) references team(id);
 alter table team add foreign key (trophy) references trophy(id);
 alter table trophy add foreign key (team) references team(id);
 
+/* user insert */
+create table users(
+  id int not null primary key auto_increment,
+  first_name varchar (255) not null,
+  last_name varchar (255) not null,
+  username varchar (255) not null,
+  email varchar (255) not null,
+  password char(60) not null,
+  signup_date date,
+  profile_pic varchar (255)
+);
+
 /*operator insert*/
 
 create table operator(
