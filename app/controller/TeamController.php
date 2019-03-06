@@ -52,6 +52,26 @@ class TeamController extends ProtectedController
             return "Title required";
         }
 
+        if(Request::post("manager")===""){
+            return "Manager name required";
+        }
+
+        if(Request::post("ground")===""){
+            return "Ground name required";
+        }
+
+        if(Request::post("ground_capacity")===""){
+            return "Ground Capacity required";
+        }
+
+        if(Request::post("since")===""){
+            return "Since required";
+        }
+
+        if(Request::post("city")===""){
+            return "City required";
+        }
+
         if(strlen(Request::post("title"))>50){
             return "Title can't be longer than 50 characters";
         }
@@ -64,6 +84,21 @@ class TeamController extends ProtectedController
             return "Title already exists.";
         }
 
+        $db = Db::getInstance();
+        $expression = $db->prepare("select count(id) from team where manager=:manager and id<>:id");
+        $expression->execute(["manager"=>Request::post("manager"), "id" => Request::post("id")]);
+        $total = $expression->fetchColumn();
+        if($total>0){
+            return "Manager already has team.";
+        }
+
+        $db = Db::getInstance();
+        $expression = $db->prepare("select count(id) from team where ground=:ground and id<>:id");
+        $expression->execute(["ground"=>Request::post("ground"), "id" => Request::post("id")]);
+        $total = $expression->fetchColumn();
+        if($total>0){
+            return "Ground name already exists.";
+        }
 
         return true;
     }
