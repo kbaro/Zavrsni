@@ -52,18 +52,29 @@ class PlayerController extends ProtectedController
             return "Name required";
         }
 
+        if (Request::post("surname") === "") {
+            return "Surname required";
+        }
+
+        if (Request::post("nationality") === "") {
+            return "Nationality required";
+        }
+
+        if (Request::post("position") === "") {
+            return "Position required";
+        }
+
+        if (Request::post("salary") === "") {
+            return "Salary required";
+        }
+
+        if (Request::post("team") === "") {
+            return "Team required";
+        }
+
         if (strlen(Request::post("name")) > 50) {
             return "Name can't be longer than 50 characters";
         }
-
-        $db = Db::getInstance();
-        $expression = $db->prepare("select count(id) from player where name=:name and id<>:id");
-        $expression->execute(["name" => Request::post("name"), "id" => Request::post("id")]);
-        $total = $expression->fetchColumn();
-        if ($total > 0) {
-            return "Name already exists.";
-        }
-
 
         return true;
     }

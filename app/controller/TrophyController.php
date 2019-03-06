@@ -58,7 +58,7 @@ class TrophyController extends ProtectedController
 
         $db = Db::getInstance();
         $expression = $db->prepare("select count(id) from trophy where league_name=:league_name and id<>:id");
-        $expression->execute(["title"=>Request::post("league_name"), "id" => Request::post("id")]);
+        $expression->execute(["league_name"=>Request::post("league_name"), "id" => Request::post("id")]);
         $total = $expression->fetchColumn();
         if($total>0){
             return "League name already exists.";

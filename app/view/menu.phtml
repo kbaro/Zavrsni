@@ -33,6 +33,9 @@
                          <a href="<?php echo App::config("url")."operator/index" ?>">Admin</a>
                      </li>
 
+                    <li>
+                        <a href="<?php echo App::config("url")."user/index" ?>">User</a>
+                    </li>
 
 
                     <?php endif; ?>
@@ -42,6 +45,9 @@
             </div>
             <div class="top-bar-right">
                 <ul class="menu">
+                    <li>
+                        <a href="<?php echo App::config("url") ?>user/register">Register</a>
+                    </li>
                     <li>
                         <?php if(Session::getInstance()->isLogiran()): ?>
                         <a href="<?php echo App::config("url") ?>admin/logout">Logout

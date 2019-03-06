@@ -28,7 +28,7 @@ class Trophy
                     a.times_won_league,
                     a.times_won_cup,
                     a.times_won_supercup
-                    order by a.team
+                 
 
         ");
         $expression->execute();

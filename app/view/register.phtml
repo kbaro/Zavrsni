@@ -1,0 +1,23 @@
+<input class="log-in-form" method="post"
+      action="<?php echo App::config("url") ?>user/register">
+
+
+    <label>Username</label>
+    <input type="text" name="name"  value="<?php if(!isset($_POST["username"]))?>">
+
+
+    <label>Email</label>
+    <input type="email" name="email" value="<?php  if(isset ($_POST["email"]))?>">
+
+
+    <label>Password</label>
+    <input type="password" name="password"  value="<?php if(!isset($_POST["email"]))?>">
+
+
+
+    <button type="submit" class="button expanded" value="Register">REGISTER</button>
+
+</form>
+<?php echo $message ?>
+
+
