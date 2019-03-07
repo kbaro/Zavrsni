@@ -46,13 +46,14 @@ create table users(
   id int not null primary key auto_increment,
   first_name varchar (255) not null,
   last_name varchar (255) not null,
-  username varchar (255) not null,
   email varchar (255) not null,
   password char(60) not null,
-  signup_date date,
   profile_pic varchar (255)
 );
 
+insert into users(id,first_name,last_name,email,password,profile_pic)values(
+null,'Marko','Maric','markomaric@gmail.com','e','abc'
+ );
 /*operator insert*/
 
 create table operator(

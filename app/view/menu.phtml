@@ -33,11 +33,6 @@
                          <a href="<?php echo App::config("url")."operator/index" ?>">Admin</a>
                      </li>
 
-                    <li>
-                        <a href="<?php echo App::config("url")."user/index" ?>">User</a>
-                    </li>
-
-
                     <?php endif; ?>
 
 
@@ -46,11 +41,16 @@
             <div class="top-bar-right">
                 <ul class="menu">
 
-                    <li>
-                        <?php if(Session::getInstance()->isLogiran()): ?>
-                        <a href="<?php echo App::config("url") ?>admin/logout">Logout
-                            <?php echo Session::getInstance()->getUser()->nameSurname ?>
-                        </a>
+                        <li>
+                            <?php if(Session::getInstance()->isLogiran()): ?>
+                        <li>
+                            <a href="<?php echo App::config("url")."user/index" ?>">Profile</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo App::config("url") ?>admin/logout">Logout
+                                <?php echo Session::getInstance()->getUser()->nameSurname ?>
+                            </a>
+                        </li>
                         <?php else:?>
                         <li>
                         <a href="<?php echo App::config("url") ?>user/singup">Register</a>

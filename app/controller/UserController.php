@@ -14,10 +14,8 @@ class UserController{
             $row=$expression->fetch();
             if(password_verify(Request::post("password"),$row->password)){
                 $user = new stdClass();
-                $user->first_name=$row->first_name;
-                $user->last_name=$row->last_name;
                 $user->email=$row->email;
-                $user->nameSurname=$row->name . " " . $row->surname;
+                $user->first_name=$row->first_name;
                 Session::getInstance()->register($user);
                 $view->render('index',["message"=>"Welcome"]);
             }else{

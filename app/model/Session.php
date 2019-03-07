@@ -13,6 +13,7 @@ class Session{
         }
     }
 
+
     public function login($user){
         $this->user=$user;
         $_SESSION['logiran'] = true;
