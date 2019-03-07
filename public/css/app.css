@@ -31,6 +31,7 @@
 body{
     background: radial-gradient(circle,lightskyblue,whitesmoke);
 
+    /*background-image: linear-gradient(to right, #293544, #1c3c53, #09161f);*/
 
 }
 

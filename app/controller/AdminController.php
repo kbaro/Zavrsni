@@ -21,10 +21,10 @@ class AdminController{
                 Session::getInstance()->login($user);
                 $view->render('index',["message"=>"Welcome"]);
             }else{
-                $view->render('login',["message"=>"Email or password do not match"]);
+                $view->render('singin',["message"=>"Email or password do not match"]);
             }
         }else{
-               $view->render('login',["message"=>"Wrong E-mail"]);
+               $view->render('singin',["message"=>"Wrong E-mail"]);
          }
     //
   }

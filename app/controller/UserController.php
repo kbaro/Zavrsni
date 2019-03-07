@@ -21,10 +21,10 @@ class UserController{
                 Session::getInstance()->register($user);
                 $view->render('index',["message"=>"Welcome"]);
             }else{
-                $view->render('register',["message"=>"Email or password do not match"]);
+                $view->render('singup',["message"=>"Email or password do not match"]);
             }
         }else{
-            $view->render('register',["message"=>"Wrong E-mail"]);
+            $view->render('singup',["message"=>"Wrong E-mail"]);
         }
 
     }
