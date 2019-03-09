@@ -13,10 +13,22 @@ class Session{
         }
     }
 
-    public function signup($user)
+
+    public function register()
     {
-        session_start();
-        if($_POST["username"] && $_POST["email"] && $_POST["password"]);
+        $password_hash = $password_hash($this->password, PASSWORD_DEFAULT);
+
+        $sql = 'INSERT INTO  users (name, email, password_hash)
+                VALUES (:name, :email, :password_hash)';
+
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $stmt->bindValue(':password_hash', $this->password_hash, PDO::PARAM_STR);
+
+        $stmt->execute();
     }
 
 
