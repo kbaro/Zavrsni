@@ -10,21 +10,37 @@ class UserController{
         $expression = $db->prepare("select first_name,last_name,email,password from users where email=:email");
         $expression->execute(["email"=>Request::post("email")]);
         $view = new View();
-        if($expression->rowCount()>0){
-            $row=$expression->fetch();
-            if(password_verify(Request::post("password"),$row->password)){
-                $user = new stdClass();
-                $user->email=$row->email;
-                $user->first_name=$row->first_name;
-                Session::getInstance()->register($user);
-                $view->render('index',["message"=>"Welcome"]);
-            }else{
-                $view->render('singup',["message"=>"Email or password do not match"]);
-            }
-        }else{
-            $view->render('singup',["message"=>"Wrong E-mail"]);
-        }
 
     }
 
 }
+
+
+/*<?php
+
+public function signup()
+{
+
+     session_start();
+       if($_POST["username"] && $_POST["email"] && $_POST["password"]);
+}
+
+{
+    {
+        $servername="localhost";
+        $username="kbaro";
+        $password="kbaro";
+        $conn=  mysql_connect($servername,$username,$password)or die(mysql_error());
+        mysql_select_db("users",$conn);
+        $sql="insert into users (username,email,password)values('$_POST[username]','$_POST[email]','$_POST[password]')";
+        $result=mysql_query($sql,$conn) or die(mysql_error());
+        print "<h1>you have registered successfully</h1>";
+
+        print "<a href='Session.php'>Go to login page</a>";
+    }
+    else print "Passwords doesnt match";
+}
+else print"Invalid input data";
+
+?>
+*/

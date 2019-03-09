@@ -13,22 +13,32 @@ class Session{
         }
     }
 
+    public function signup()
+    {
+        session_start();
+        if($_POST["username"] && $_POST["email"] && $_POST["password"]);
+    }
 
-    public function login($user){
+
+    public function login($user)
+    {
         $this->user=$user;
         $_SESSION['logiran'] = true;
         $_SESSION["user"] = $user;
     }
 
-    public function getUser(){
+    public function getUser()
+    {
         return $this->user;
     }
 
-    public function logout(){
+    public function logout()
+    {
         unset($_SESSION['logiran']);
     }
 
-    function isLogiran(){
+    function isLogiran()
+    {
         return isset($_SESSION['logiran']) ? true : false;
     }
 
