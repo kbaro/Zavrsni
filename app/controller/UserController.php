@@ -7,7 +7,7 @@ class UserController{
     function register()
     {
         $db=Db::getInstance();
-        $expression = $db->prepare("select first_name,last_name,email,password from users where email=:email");
+        $expression = $db->prepare("select username,email,password from users where email=:email");
         $expression->execute(["email"=>Request::post("email")]);
         $view = new View();
 

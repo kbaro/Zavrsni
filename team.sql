@@ -50,8 +50,8 @@ create table users(
   profile_pic varchar (255)
 );
 
-insert into users(id,first_name,last_name,email,password,profile_pic)values(
-null,'Marko','Maric','markomaric@gmail.com','e','abc'
+insert into users(id,username,email,password,profile_pic)values(
+null,'Marko','markomaric@gmail.com','e','abc'
  );
 /*operator insert*/
 

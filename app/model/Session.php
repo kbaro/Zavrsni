@@ -13,7 +13,7 @@ class Session{
         }
     }
 
-    public function signup()
+    public function signup($user)
     {
         session_start();
         if($_POST["username"] && $_POST["email"] && $_POST["password"]);
