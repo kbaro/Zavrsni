@@ -1,9 +1,11 @@
 <form class="log-in-form" method="post"
       action="<?php echo App::config("url") ?>user/register">
 
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username" required>
 
     <label>Email</label>
-    <input type="email" name="reg_email" placeholder="Email" required>
+    <input type="email" name="email" placeholder="Email" required>
 
     <label>Password</label>
     <input type="password" name="password"  placeholder="Password" required>

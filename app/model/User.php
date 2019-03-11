@@ -1,21 +1,20 @@
-
 <?php
 
-    public function register()
+    class User
     {
-        $password_hash = $password_hash($this->password, PASSWORD_DEFAULT);
 
-        $sql = 'INSERT INTO  users (name, email, password_hash)
-                VALUES (:name, :email, :password_hash)';
+        public function register($username, $email, $password)
+        {
+            if ($username == null || $email == null || $password == null)
+                return 0;
 
-        $db = static::getDB();
-        $stmt = $db->prepare($sql);
+            $password = password_hash($password);
 
-        $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
-        $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
-        $stmt->bindValue(':password_hash', $this->password_hash, PDO::PARAM_STR);
+            $db = DB::getInstance();
+            $izraz = $db->prepare("insert into user (username,email,password)
+            values ($username,$email,$password)");
+            $izraz->execute();
 
-        $stmt->execute();
+        }
+
     }
-
-

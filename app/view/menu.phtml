@@ -44,7 +44,7 @@
                         <li>
                             <?php if(Session::getInstance()->isLogiran()): ?>
                         <li>
-                            <a href="<?php echo App::config("url")."user/index" ?>">Profile</a>
+                            <a href="<?php echo App::config("url") ?>user/index">Profile</a>
                         </li>
                         <li>
                             <a href="<?php echo App::config("url") ?>admin/logout">Logout
@@ -53,9 +53,9 @@
                         </li>
                         <?php else:?>
                         <li>
-                        <a href="<?php echo App::config("url") ?>user/singup">Register</a>
+                        <a href="<?php echo App::config("url") ?>user/register">Register</a>
                     </li>
-                        <a href="<?php echo App::config("url") ?>admin/singin">Login</a>
+                        <a href="<?php echo App::config("url") ?>admin/signin">Login</a>
 
                         <?php endif;?>
 

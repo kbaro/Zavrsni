@@ -42,7 +42,7 @@ alter table team add foreign key (trophy) references trophy(id);
 alter table trophy add foreign key (team) references team(id);
 
 /* user insert */
-create table users(
+create table user(
   id int not null primary key auto_increment,
   username varchar (255) not null,
   email varchar (255) not null,
@@ -50,7 +50,7 @@ create table users(
   profile_pic varchar (255)
 );
 
-insert into users(id,username,email,password,profile_pic)values(
+insert into user(id,username,email,password,profile_pic)values(
 null,'Marko','markomaric@gmail.com','e','abc'
  );
 /*operator insert*/

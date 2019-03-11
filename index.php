@@ -1,7 +1,7 @@
 <?php
 define("BP",__DIR__ . DIRECTORY_SEPARATOR );
 //echo BP;
-error_reporting(E_ERROR);
+error_reporting(E_ALL);
 ini_set("display_errors",1);
 
 $t = implode(PATH_SEPARATOR,[

@@ -1,7 +1,7 @@
 <?php
 
 class AdminController{
-    function singin(){
+    function signin(){
         $view = new View();
         $view->render('login',["message"=>""]);
     }
@@ -22,10 +22,10 @@ class AdminController{
                 Session::getInstance()->login($user);
                 $view->render('teams/index',["message"=>"Welcome"]);
             }else{
-                $view->render('singin',["message"=>"Email or password do not match"]);
+                $view->render('signin',["message"=>"Email or password do not match"]);
             }
         }else{
-               $view->render('singin',["message"=>"Wrong E-mail"]);
+               $view->render('signin',["message"=>"Wrong E-mail"]);
          }
     //
   }
