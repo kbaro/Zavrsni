@@ -36,6 +36,12 @@ class Player
         return $expression->fetchAll();
     }
 
+    public static function search(){
+        $db = Db::getInstance();
+        $expression = $db->prepare("select * from player where name=:name");
+        $expression->execute(["name"=>$name]);
+        return $expression->fetch();
+    }
 
     public static function find($id)
     {

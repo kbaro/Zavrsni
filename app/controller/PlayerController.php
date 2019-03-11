@@ -53,7 +53,7 @@ class PlayerController extends ProtectedController
 
         if ($result->num_rows > 0) {
 
-            while ($row = $result->render()) {
+            while ($row = $result->fetch()) {
                 if ($_GET["search"] <> '') {
                     echo $row["content"];
                 }
