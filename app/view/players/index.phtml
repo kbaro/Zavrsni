@@ -4,6 +4,13 @@
 
 <form action="player.php" method="get">
     Search: <input type="text" name="search" value="<?php echo $_GET["search"]; ?>" /><input type="submit" value="Search" />
+    <input name="show" type="radio" value="1"<?php if ($_GET["name"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Name
+    <input name="show" type="radio" value="1"<?php if ($_GET["surname"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Surname
+    <input name="show" type="radio" value="1"<?php if ($_GET["nationality"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Nationality
+    <input name="show" type="radio" value="1"<?php if ($_GET["position"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Position
+    <input name="show" type="radio" value="1"<?php if ($_GET["title"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Team
+
+
 </form>
 
 <table>
