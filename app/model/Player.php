@@ -36,6 +36,7 @@ class Player
         return $expression->fetchAll();
     }
 
+
     public static function find($id)
     {
         $db = Db::getInstance();

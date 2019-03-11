@@ -21,6 +21,7 @@ class PlayerController extends ProtectedController
 
     }
 
+
     function edit($id)
     {
         $_POST["id"] = $id;
@@ -38,6 +39,33 @@ class PlayerController extends ProtectedController
             );
         }
 
+    }
+
+
+    function search()
+    {
+        if ($_GET["show"] == '2') {
+            $db = "SELECT * FROM " . $db . " WHERE name=:name LIKE '%" . $expression->real_escape_string($_GET["search"]) . "%'";
+        } else {
+            $db = "SELECT * FROM " . $db;
+        }
+        $result = $db->query($db);
+
+        if ($result->num_rows > 0) {
+           Player::find($db);
+           $this->search();
+
+
+            while ($row = $result->fetch_assoc()) {
+                if ($_GET["search"] <> '') {
+                    echo $row["content"];
+                }
+                echo "<hr>";
+            }
+        } else {
+            echo "0 results";
+        }
+        $expression->close();
     }
 
     function delete($id)

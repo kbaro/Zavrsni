@@ -1,4 +1,5 @@
 <?php
+
 class AdminController{
     function singin(){
         $view = new View();
@@ -19,7 +20,7 @@ class AdminController{
                 $user->email=$row->email;
                 $user->nameSurname=$row->name . " " . $row->surname;
                 Session::getInstance()->login($user);
-                $view->render('index',["message"=>"Welcome"]);
+                $view->render('teams/index',["message"=>"Welcome"]);
             }else{
                 $view->render('singin',["message"=>"Email or password do not match"]);
             }

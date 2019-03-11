@@ -1,6 +1,11 @@
 <a href="<?php echo App::config("url") ?>player/prepareadd" class="success button expanded">
    ADD NEW PLAYER
 </a>
+
+<form action="player.php" method="get">
+    Search: <input type="text" name="search" value="<?php echo $_GET["search"]; ?>" /><input type="submit" value="Search" />
+</form>
+
 <table>
     <thead>
     <tr>
