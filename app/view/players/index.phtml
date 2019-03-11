@@ -2,13 +2,13 @@
    ADD NEW PLAYER
 </a>
 
-<form action="player.php" method="get">
+<form action="<?php echo App::config("url") ?>player/search" method="get">
     Search: <input type="text" name="search" value="<?php echo $_GET["search"]; ?>" /><input type="submit" value="Search" />
     <input name="show" type="radio" value="1"<?php if ($_GET["name"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Name
-    <input name="show" type="radio" value="2"<?php if ($_GET["surname"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Surname
-    <input name="show" type="radio" value="3"<?php if ($_GET["nationality"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Nationality
-    <input name="show" type="radio" value="4"<?php if ($_GET["position"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Position
-    <input name="show" type="radio" value="5"<?php if ($_GET["title"]=='1' or !isset($_GET["search"])) echo ' checked="checked"'; ?> />Team
+    <input name="show" type="radio" value="2"<?php if ($_GET["surname"]=='1' or !isset($_GET["search"])) echo ''; ?> />Surname
+    <input name="show" type="radio" value="3"<?php if ($_GET["nationality"]=='1' or !isset($_GET["search"])) echo ''; ?> />Nationality
+    <input name="show" type="radio" value="4"<?php if ($_GET["position"]=='1' or !isset($_GET["search"])) echo ''; ?> />Position
+    <input name="show" type="radio" value="5"<?php if ($_GET["title"]=='1' or !isset($_GET["search"])) echo ''; ?> />Team
 
 
 </form>

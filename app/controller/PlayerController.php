@@ -45,18 +45,15 @@ class PlayerController extends ProtectedController
     function search()
     {
         if ($_GET["show"] == '2') {
-            $db = "SELECT * FROM " . $db . " WHERE name=:name LIKE '%" . $expression->real_escape_string($_GET["search"]) . "%'";
+            $player = "SELECT * FROM " . $player . " WHERE name=:name LIKE '%" . $this->real_escape_string($_GET["search"]) . "%'";
         } else {
-            $db = "SELECT * FROM " . $db;
+            $player = "SELECT * FROM " . $player;
         }
-        $result = $db->query($db);
+        $result = $control->search($player);
 
         if ($result->num_rows > 0) {
-           Player::find($db);
-           $this->search();
 
-
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $result->render()) {
                 if ($_GET["search"] <> '') {
                     echo $row["content"];
                 }
@@ -65,7 +62,14 @@ class PlayerController extends ProtectedController
         } else {
             echo "0 results";
         }
-        $expression->close();
+        $this->close();
+        $view = new View();
+        $view->render(
+            'players/search',
+            [
+                "message" => ""
+            ]
+        );
     }
 
     function delete($id)
