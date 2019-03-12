@@ -14,8 +14,13 @@
 </label>
 
 <label>Position
-    <input type="text" name="position"
-           value="<?php echo Request::post("position") ?>" />
+    <select type="text" name="position">
+        <option value="<?php echo Request::post("position") ?>">--Select Position--</option>
+        <option value="<?php echo Request::post("position") ?>">Striker</option>
+        <option value="<?php echo Request::post("position") ?>">Midfielder</option>
+        <option value="<?php echo Request::post("position") ?>">Defender</option>
+        <option value="<?php echo Request::post("position") ?>">Goalkeeper</option>
+    </select>
 </label>
 
 <label>Salary
