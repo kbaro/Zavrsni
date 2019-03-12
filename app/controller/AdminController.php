@@ -20,7 +20,7 @@ class AdminController{
                 $user->email=$row->email;
                 $user->nameSurname=$row->name . " " . $row->surname;
                 Session::getInstance()->login($user);
-                $view->render('teams/index',["message"=>"Welcome"]);
+                $view->render('index',["message"=>"Welcome"]);
             }else{
                 $view->render('signin',["message"=>"Email or password do not match"]);
             }

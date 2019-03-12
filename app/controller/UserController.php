@@ -1,23 +1,25 @@
 <?php
     class UserController{
 
-        function register()
+        public function registration()
         {
             $view = new View();
-            $view->render('register',["message"=>""]);
+            $view->render('registration',["message"=>""]);
 
         }
-
-        function signup($username, $email, $password)
+        public function register()
         {
-            $username = Request::post("username");
-            $email = Request::post("email");
-            $password = Request::post("password");
+            $db = Db::connect();
+            $expression = $db->prepare("insert into user (username,email,password) values (:username,:email,:password)");
+            $expression->bindValue('username', Request::post("username"));
+            $expression->bindValue('email', Request::post("email"));
+            $expression->bindValue('password', password_hash(Request::post("password"),PASSWORD_DEFAULT));
+            $expression->execute();
 
-            $user=new User();
-            $user->register();
+            Session::getInstance()->logout();
+            $view = new View();
+            $view->render('login',["message"=>""]);
 
-            $view->render('register',["message"=>"Success"]);
         }
     }
 

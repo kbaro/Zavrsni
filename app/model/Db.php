@@ -17,6 +17,16 @@ class Db extends PDO{
 
     }
 
+    public static function connect($name = 'team')
+    {
+        $config = App::config("db");
+        if(!isset(self::$instance[$name])) {
+            self::$instance[$name] = new self($config);
+        }
+        return self::$instance[$name];
+    }
+
+
 
     public static function getInstance()
     {
