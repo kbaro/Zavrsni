@@ -37,10 +37,19 @@ class Player
     }
 
     public static function search(){
-        $db = Db::getInstance();
-        $expression = $db->prepare("select * from player where name=:name");
-        $expression->execute(["name"=>$name]);
-        return $expression->fetch();
+        $search = $db->getInstance($_POST['search']);
+
+        $resultSet = $db->query("select * from player where name = '$search'");
+
+        if($resultSet->num_rows > 0){
+            while($rows = $resultSet->fetch_assoc())
+            {
+
+            }
+
+        }else{
+            echo "No results";
+        }
     }
 
     public static function find($id)
