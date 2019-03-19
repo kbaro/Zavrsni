@@ -5,6 +5,7 @@ class AdminController{
         $view = new View();
         $view->render('login',["message"=>""]);
     }
+
     function login()
     {
         $db=Db::getInstance();
@@ -35,4 +36,28 @@ class AdminController{
         $view = new View();
         $view->render('index',["message"=>""]);
     }
+
+    function registration()
+                {
+                    $view = new View();
+                    $view->render('registration',["message"=>""]);
+
+                }
+                function register()
+                {
+                    $db = Db::getInstance();
+                    $expression = $db->prepare("insert into operator (name,surname,email,password) values (:name,:surname,:email,:password)");
+                    $expression->bindValue('name', Request::post("name"));
+                    $expression->bindValue('surname', Request::post("surname"));
+                    $expression->bindValue('email', Request::post("email"));
+                    $expression->bindValue('password', password_hash(Request::post("password"),PASSWORD_DEFAULT));
+                    $expression->execute();
+
+
+
+                    Session::getInstance()->logout();
+                    $view = new View();
+                    $view->render('login',["message"=>"Success"]);
+
+                }
 }
