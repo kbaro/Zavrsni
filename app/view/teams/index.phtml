@@ -3,6 +3,13 @@
     ADD NEW TEAM
 </a>
 
+<form  method="post" action="<?php echo App::config("url") ?>team/search">
+    Search: <input type="text" name="title" />
+
+    <input class="button" type="submit" value="Search" />
+
+</form>
+
 <table>
     <thead>
         <tr>

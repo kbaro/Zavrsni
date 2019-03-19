@@ -36,19 +36,17 @@ class Player
         return $expression->fetchAll();
     }
 
-    public static function search(){
-        $search = $db->getInstance($_POST['search']);
-
-        $resultSet = $db->query("select * from player where name = '$search'");
-
-        if($resultSet->num_rows > 0){
-            while($rows = $resultSet->fetch_assoc())
-            {
-
-            }
-
+    public static function search()
+    {
+        $db=Db::getInstance();
+        $exp=$db->prepare("select * from player where name like '%' :name '%'");
+        $exp->bindValue('name',  Request::post("name"));
+        $exp->execute();
+        $row =$exp->rowCount();
+        if($row<=0){
+            return "Player not found";
         }else{
-            echo "No results";
+            return $exp->fetchAll();
         }
     }
 

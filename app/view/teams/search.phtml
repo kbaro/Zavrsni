@@ -1,0 +1,19 @@
+<?php if (is_array($teams) || is_object($teams)): ?>
+    <?php if (Session::getInstance()->isLogiran()): ?>
+        <div class="grid-x">
+            <?php foreach($teams as $team): ?>
+                <div class="cell large-3">
+                    <div class="success callout operators">
+                        <h1><?php echo $team->title?>
+                            <br />
+                            <?= $team->numberOfTeams?>
+                        </h1>
+
+
+                    </div>
+                </div>
+
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>

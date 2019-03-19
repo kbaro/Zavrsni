@@ -3,8 +3,8 @@
 </a>
 
 
-<form method="post">
-    Search: <input type="text" name="search" />
+<form  method="post" action="<?php echo App::config("url") ?>player/search">
+    Search: <input type="text" name="name" />
 
     <input class="button" type="submit" value="Search" />
 

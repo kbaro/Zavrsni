@@ -121,6 +121,12 @@ class PlayerController extends ProtectedController
 
     }
 
+    function search()
+    {
+        $view = new View();
+        $view->render('players/index' , ["players"=>Player::search()]);
+    }
+
 
     function index($page = 1)
     {

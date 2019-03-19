@@ -46,6 +46,21 @@ class Team
         return $expression->fetch();
     }
 
+    public static function search()
+    {
+        $db=Db::getInstance();
+        $exp=$db->prepare("select * from team where title  like '%' :title '%' ");
+        $exp->bindValue('title',  Request::post("title"));
+        $exp->execute();
+        $row =$exp->rowCount();
+        if($row<=0){
+            return "Team not found";
+        }else{
+            return $exp->fetchAll();
+        }
+    }
+
+
     public static function add()
     {
         $db = Db::getInstance();

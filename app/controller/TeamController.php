@@ -135,6 +135,13 @@ class TeamController extends ProtectedController
         );
     }
 
+    function search()
+    {
+        $view = new View();
+        $view->render('teams/index' , ["teams"=>Team::search()]);
+    }
+
+
 
     function index(){
         $view = new View();
