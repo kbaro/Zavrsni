@@ -43,29 +43,23 @@ class Player
             $searchq = $_POST['search'];
             $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 
-            $query = mysqli_query("select * player where name like '%$searchq%'
-             or surname like '%$searchq%'
-             or nationality like '%$searchq%'
-             or position like '%$searchq%'
-             or team like '%$searchq%'")
+            $expression = $db->prepare("select * player where name like '%'$searchq'%'
+             or surname like '%'$searchq'%'
+             or nationality like '%'$searchq'%'
+             or position like '%'$searchq'%'
+             or team like '%'$searchq'%'")
                 or die("Could not search");
-            $count = mysqli_num_rows($query);
+            $count = mysqli_num_rows($expression);
+            $expression->execute();
             if ($count == 0){
                 $output = 'There was no results!';
             }else{
-                while($row = mysqli_fetch_array($query)){
-                    $fname = $row['name'];
-                    $lname = $row['surname'];
-                    $nat = $row['nationality'];
-                    $pos = $row['position'];
-                    $team = $row['team'];
-                    $id = $row['id'];
-
-                    $output .= '<div>'.$fname.' '.$lname.' '.$nat.' '.$pos.' '.$team.'</div>';
+                $expression->fetchAll();
                 }
             }
+
         }
-    }
+
 
     public static function find($id)
     {
