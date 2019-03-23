@@ -39,14 +39,31 @@ class Player
     public static function search()
     {
         $db=Db::getInstance();
-        $exp=$db->prepare("select * from player where name like '%' :name '%'");
-        $exp->bindValue('name',  Request::post("name"));
-        $exp->execute();
-        $row =$exp->rowCount();
-        if($row<=0){
-            return "Player not found";
-        }else{
-            return $exp->fetchAll();
+        if (isset($_POST['search'])){
+            $searchq = $_POST['search'];
+            $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+
+            $query = mysqli_query("select * player where name like '%$searchq%'
+             or surname like '%$searchq%'
+             or nationality like '%$searchq%'
+             or position like '%$searchq%'
+             or team like '%$searchq%'")
+                or die("Could not search");
+            $count = mysqli_num_rows($query);
+            if ($count == 0){
+                $output = 'There was no results!';
+            }else{
+                while($row = mysqli_fetch_array($query)){
+                    $fname = $row['name'];
+                    $lname = $row['surname'];
+                    $nat = $row['nationality'];
+                    $pos = $row['position'];
+                    $team = $row['team'];
+                    $id = $row['id'];
+
+                    $output .= '<div>'.$fname.' '.$lname.' '.$nat.' '.$pos.' '.$team.'</div>';
+                }
+            }
         }
     }
 
