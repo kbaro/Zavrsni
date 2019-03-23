@@ -43,18 +43,19 @@ class Player
             $searchq = $_POST['search'];
             $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 
-            $expression = $db->prepare("select * player where name like '%'$searchq'%'
-             or surname like '%'$searchq'%'
-             or nationality like '%'$searchq'%'
-             or position like '%'$searchq'%'
-             or team like '%'$searchq'%'")
+            $expression = $db->prepare("select * from player where
+             name like '%' $searchq '%'
+             or surname like '%' $searchq '%'
+             or nationality like '%' $searchq '%'
+             or position like '%' $searchq '%'
+             or team like '%' $searchq '%'")
                 or die("Could not search");
-            $count = mysqli_num_rows($expression);
             $expression->execute();
-            if ($count == 0){
-                $output = 'There was no results!';
+            $count = mysqli_num_rows($expression);
+            if ($count <= 0){
+                return "There was no results!";
             }else{
-                $expression->fetchAll();
+                return $expression->fetchAll();
                 }
             }
 
