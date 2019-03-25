@@ -73,7 +73,7 @@ class Team
     public static function add()
     {
         $db = Db::getInstance();
-        $expression = $db->prepare("insert into team or trophy (title,manager,ground,ground_capacity,since,trophy,times_won_league,times_won_cup,times_won_supercup,city) 
+        $expression = $db->prepare("insert into team (title,manager,ground,ground_capacity,since,trophy,times_won_league,times_won_cup,times_won_supercup,city) 
         values (:title,:manager,:ground,:ground_capacity,:since,:trophy,:times_won_league,:times_won_cup,:times_won_supercup,:city)");
         $expression->execute(self::data());
     }
