@@ -49,15 +49,24 @@ class Team
     public static function search()
     {
         $db=Db::getInstance();
-        $expression=$db->prepare("select * from team where title  like '%' :title '%' ");
-        $expression->bindValue('title',  Request::post("title"));
-        $expression->execute();
-        $row =$expression->rowCount();
-        if($row<=0){
-            return "Team not found";
-        }else{
-            return $expression->fetchAll();
+        if (isset($_POST['search'])){
+            $searchq = $_POST['search'];
+            $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+
+            $expression = $db->prepare("select * from team where
+             title like '%$searchq%'
+             or manager like '%$searchq%'
+             or city like '%$searchq%'")
+            or die("Could not search");
+            $expression->execute();
+            $count = $expression->rowCount();
+            if ($count == 0){
+                return "There was no results!";
+            }else{
+                return $expression->fetchAll();
+            }
         }
+
     }
 
 
