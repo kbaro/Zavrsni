@@ -29,9 +29,12 @@
                     <li>
                           <a href="<?php echo App::config("url")."trophy/index" ?>">Trophys</a>
                      </li>
-                     <li>
-                         <a href="<?php echo App::config("url")."operator/index" ?>">Admin</a>
-                     </li>
+                    <li>
+                            <a href="<?php echo App::config("url")."trophy/index" ?>">Predictions</a>
+                    </li>
+                    <li>
+                            <a href="<?php echo App::config("url")."trophy/index" ?>">Transfers</a>
+                    </li>
 
                     <?php endif; ?>
 
@@ -43,9 +46,9 @@
 
                         <li>
                             <?php if(Session::getInstance()->isLogiran()): ?>
-                        <li>
-                            <a href="<?php echo App::config("url")."user/index" ?>">Profile</a>
-                        </li>
+                            <li>
+                                <a href="<?php echo App::config("url")."operator/index" ?>">Profile</a>
+                            </li>
                         <li>
                             <a href="<?php echo App::config("url") ?>admin/logout">Logout
                                 <?php echo Session::getInstance()->getUser()->nameSurname ?>
