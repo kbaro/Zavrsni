@@ -112,15 +112,6 @@ class PlayerController extends ProtectedController
         );
     }
 
-    function select()
-    {
-
-        if ($_POST['submit'] && $_POST['submit'] != 0) {
-            $position = $_POST['position'];
-        }
-
-    }
-
     function search()
     {
         $view = new View();

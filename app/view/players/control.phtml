@@ -13,15 +13,26 @@
            value="<?php echo Request::post("nationality") ?>" />
 </label>
 
-<label>Position
-    <select type="text" name="position">
-        <option value="<?php echo Request::post("position") ?>">--Select Position--</option>
-        <option value="<?php echo Request::post("position") ?>">Striker</option>
-        <option value="<?php echo Request::post("position") ?>">Midfielder</option>
-        <option value="<?php echo Request::post("position") ?>">Defender</option>
-        <option value="<?php echo Request::post("position") ?>">Goalkeeper</option>
-    </select>
-</label>
+<label for="position">Position</label>
+<select name="position" id="position">
+    <option value="0">Choose position</option>
+
+    <?php foreach(Player::read(1) as $player): ?>
+
+
+
+        <option
+
+            <?php if(Request::post("position")==$player->id):?>
+                selected="selected"
+            <?php endif;?>
+
+                value="<?php echo $player->id ?>"><?php echo $player->position ?>
+        </option>
+
+    <?php endforeach; ?>
+
+</select>
 
 <label>Salary
     <input type="number" name="salary"
