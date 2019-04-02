@@ -16,21 +16,15 @@
 <label for="position">Position</label>
 <select name="position" id="position">
     <option value="0">Choose position</option>
-
-    <?php foreach(Player::read(1) as $player): ?>
-
-
+    <?php
+    $player = $_POST['position']?>
+    {
 
         <option
 
-            <?php if(Request::post("position")==$player->id):?>
-                selected="selected"
-            <?php endif;?>
-
-                value="<?php echo $player->id ?>"><?php echo $player->position ?>
+                value="<?php echo $player['position']; ?>"><?php $player['position']; ?>
         </option>
-
-    <?php endforeach; ?>
+}
 
 </select>
 
