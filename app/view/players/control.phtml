@@ -13,18 +13,21 @@
            value="<?php echo Request::post("nationality") ?>" />
 </label>
 
-<label for="position">Position</label>
-<select name="position" id="position">
-    <option value="0">Choose position</option>
-    <?php
-    $player = $_POST['position']?>
-    {
+<label for="positions">Position</label>
+<select name="positions" id="positions">
+    <option value="0">Choose</option>
+
+    <?php foreach(Player::read(1) as $positions): ?>
 
         <option
 
-                value="<?php echo $player['position']; ?>"><?php $player['position']; ?>
-        </option>
-}
+            <?php if(Request::post("positions")==$positions->id):?>
+                selected="selected"
+            <?php endif;?>
+
+                value="<?php echo $positions->id ?>"><?php echo $positions->position_name ?></option>
+
+    <?php endforeach; ?>
 
 </select>
 

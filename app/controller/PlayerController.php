@@ -62,7 +62,7 @@ class PlayerController extends ProtectedController
             return "Nationality required";
         }
 
-        if (Request::post("position") === "") {
+        if (Request::post("positions") === "") {
             return "Position required";
         }
 
@@ -99,7 +99,7 @@ class PlayerController extends ProtectedController
         $_POST["name"] = $player->name;
         $_POST["surname"] = $player->surname;
         $_POST["nationality"] = $player->nationality;
-        $_POST["position"] = $player->position;
+        $_POST["positions"] = $player->positions;
         $_POST["salary"] = $player->salary;
         $_POST["team"] = $player->team;
         $_POST["id"] = $player->id;

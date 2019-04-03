@@ -14,17 +14,18 @@ class Player
                     a.name,
                     a.surname,
                     a.nationality,
-                    a.position,
+                    a.positions,
                     a.salary,
                     a.team,
                     b.title
-                    from player as a left join team as b on b.id = a.team
+                    from player as a
+                    left join team as b on b.id = a.team
                     group by 
                     a.id,
                     a.name,
                     a.surname,
                     a.nationality,
-                    a.position,
+                    a.positions,
                     a.salary,
                     a.team
                     order by a.team
@@ -47,7 +48,7 @@ class Player
              name like '%$searchq%'
              or surname like '%$searchq%'
              or nationality like '%$searchq%'
-             or position like '%$searchq%'
+             or positions like '%$searchq%'
              or team like '%$searchq%'")
                 or die("Could not search");
             $expression->execute();
@@ -73,8 +74,8 @@ class Player
     public static function add()
     {
         $db = Db::getInstance();
-        $expression = $db->prepare("insert into player (name,surname,nationality,position,salary,team) 
-        values (:name,:surname,:nationality,:position,:salary,:team)");
+        $expression = $db->prepare("insert into player (name,surname,nationality,positions,salary,team) 
+        values (:name,:surname,:nationality,:positions,:salary,:team)");
         $expression->execute(self::data());
     }
 
@@ -85,7 +86,7 @@ class Player
         name=:name,
         surname=:surname,
         nationality=:nationality,
-        position=:position,
+        positions=:positions,
         salary=:salary,
         team=:team
         where id=:id");
@@ -109,7 +110,7 @@ class Player
             "name"=>Request::post("name"),
             "surname"=>Request::post("surname"),
             "nationality"=>Request::post("nationality"),
-            "position"=>Request::post("position"),
+            "positions"=>Request::post("positions"),
             "salary"=>Request::post("salary"),
             "team"=>Request::post("team")
         ];

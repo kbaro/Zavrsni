@@ -3,8 +3,8 @@
 </a>
 
 
-<form  method="post" action="<?php echo App::config("url") ?>player/search">
-    Search: <input type="text" name="search" />
+<form autocomplete="on"  method="post" action="<?php echo App::config("url") ?>player/search">
+    Search: <input type="search" name="search" required/>
 
     <input class="button" type="submit" value="Search" />
 
@@ -31,7 +31,7 @@
             <td><?php echo $player->name ?></td>
             <td><?php echo $player->surname ?></td>
             <td><?php echo $player->nationality ?></td>
-            <td><?php echo $player->position ?></td>
+            <td><?php echo $player->positions ?></td>
             <td><?php echo $player->salary ?></td>
             <td><?php echo $player->title ?></td>
 
