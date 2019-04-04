@@ -17,11 +17,11 @@
 <select name="positions" id="positions">
     <option value="0">Choose</option>
 
-    <?php foreach(Player::read(1) as $player): ?>
+    <?php foreach(Positions::read() as $positions): ?>
 
         <option
 
-            <?php if(Request::post("positions")==$player->id):?>
+            <?php if(Request::post("position") == $positions->id):?>
                 selected="selected"
             <?php endif;?>
 
@@ -31,14 +31,27 @@
 
 </select>
 
+
 <label>Salary
     <input type="number" name="salary"
            value="<?php echo Request::post("salary") ?>" />
 </label>
 
-<label>Team
-    <input type="number" name="team"
-           value="<?php echo Request::post("team") ?>" />
-</label>
+<label for="team">Team</label>
+<select name="team" id="team">
+    <option value="0">Choose</option>
 
+    <?php foreach(Team::read() as $team): ?>
+
+        <option
+
+            <?php if(Request::post("team") == $team->id):?>
+                selected="selected"
+            <?php endif;?>
+
+                value="<?php echo $team->id ?>"><?php echo $team->title ?></option>
+
+    <?php endforeach; ?>
+
+</select>
 

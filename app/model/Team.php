@@ -20,8 +20,11 @@ class Team
                     b.times_won_league,
                     b.times_won_cup,
                     b.times_won_supercup,
-                    count(b.id) as total from 
-                    team a left join trophy b on a.id=b.team
+                    c.name,
+                    c.surname as manager
+                    from 
+                    team a left join trophy b on a.id = b.team
+                    left join manager c on c.id = a.manager
                     group by 
                     a.id,
                     a.title,

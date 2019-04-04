@@ -3,11 +3,23 @@
     value="<?php echo Request::post("title") ?>" />
   </label>
 
-  <label>Manager
-    <input type="text" name="manager"
-    value="<?php echo Request::post("manager") ?>" />
-  </label>
+<label for="manager">Manager</label>
+<select name="manager" id="manager">
+    <option value="0">Choose</option>
 
+    <?php foreach(Manager::read() as $manager): ?>
+
+        <option
+
+            <?php if(Request::post("manager") == $manager->id):?>
+                selected="selected"
+            <?php endif;?>
+
+                value="<?php echo $manager->id ?>"><?php echo $manager->name . " " . $manager->surname  ?></option>
+
+    <?php endforeach; ?>
+
+</select>
   <label>Ground
     <input type="text" name="ground"
     value="<?php echo Request::post("ground") ?>" />

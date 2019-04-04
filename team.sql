@@ -39,8 +39,7 @@ create table trophy(
 create table manager(
 id     int primary key auto_increment not null,
 name    varchar(255),
-surname varchar(255),
-team    int
+surname varchar(255)
 );
 
 create table positions(
@@ -79,174 +78,174 @@ insert into positions(id,position_name) values
 
 /*manager insert */
 
-insert into manager(id,name,surname,team) values
-(null,'Jose','Mourinho',null),
-(null,'Jurgen','Klopp',null),
-(null,'Josep','Guardiola',null),
-(null,'Arsene','Wenger',null),
-(null,'Maruo','Pochetino',null),
-(null,'Random','Guy',null),
-(null,'Mauro','Sarri',null),
-(null,'Ole','Gunar',null),
-(null,'Guy','Manager',null)
+insert into manager(id,name,surname) values
+(null,'Jose','Mourinho'),
+(null,'Jurgen','Klopp'),
+(null,'Josep','Guardiola'),
+(null,'Arsene','Wenger'),
+(null,'Maruo','Pochetino'),
+(null,'Random','Guy'),
+(null,'Mauro','Sarri'),
+(null,'Ole','Gunar'),
+(null,'Guy','Manager')
 ;
 
 
 /*team insert*/
 
 insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Manchester',null,'Old Traford',45000,1900,null,'Manchester');
+null,'Manchester',8,'Old Traford',45000,1900,null,'Manchester');
 
 insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Chelsea',null,'Bridge',30000,1905,null,'London');
+null,'Chelsea',7,'Bridge',30000,1905,null,'London');
 
 insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Arsenal',null,'Emirates',40000,1904,null,'London');
+null,'Arsenal',4,'Emirates',40000,1904,null,'London');
 
 insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Spurs',null,'Lane',35000,1900,null,'London');
+null,'Spurs',5,'Lane',35000,1900,null,'London');
 
 insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Liverpool',null,'Anfield',40000,1904,null,'Liverpool');
+null,'Liverpool',2,'Anfield',40000,1904,null,'Liverpool');
 
 insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'City',null,'Etihad',30000,2000,null,'Manchester');
+null,'City',3,'Etihad',30000,2000,null,'Manchester');
 
 
 /*player insert*/
 
 /*team 1*/
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Romelu','Lukaku','Belgium',null,45000.00,1);
+null,'Romelu','Lukaku','Belgium',1,45000.00,1);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Marcus','Rashford','Endland',null,25000.00,1);
+null,'Marcus','Rashford','Endland',1,25000.00,1);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Ander','Herrera','Spain',null,30000.00,1);
+null,'Ander','Herrera','Spain',2,30000.00,1);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Paul','Pogba','France',null,65000.00,1);
+null,'Paul','Pogba','France',2,65000.00,1);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Victor','Lindelof','Sweden',null,32000.00,1);
+null,'Victor','Lindelof','Sweden',3,32000.00,1);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Luke','Shaw','England',null,20000.00,1);
+null,'Luke','Shaw','England',3,20000.00,1);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'David','de Gea','Spain',null,55000.00,1);
+null,'David','de Gea','Spain',4,55000.00,1);
 
 
 /*team 2*/
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Gonzalo','Higuain','Argentina',null,75000.00,2);
+null,'Gonzalo','Higuain','Argentina',1,75000.00,2);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Olivier','Giroud','France',null,35000.00,2);
+null,'Olivier','Giroud','France',1,35000.00,2);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Eden','Hazard','Belgium',null,105000.00,2);
+null,'Eden','Hazard','Belgium',1,105000.00,2);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Mateo','Kovačić','Croatia',null,45000.00,2);
+null,'Mateo','Kovačić','Croatia',2,45000.00,2);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'David','Luiz','Brazil',null,65000.00,2);
+null,'David','Luiz','Brazil',3,65000.00,2);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Gary','Cahill','England',null,35000.00,2);
+null,'Gary','Cahill','England',3,35000.00,2);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Kepa','Arrizabalaga','Spain',null,65000.00,2);
+null,'Kepa','Arrizabalaga','Spain',4,65000.00,2);
 
 /*team 3*/
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Pierre','Emerick-Aubameyang','Gabon',null,65000.00,3);
+null,'Pierre','Emerick-Aubameyang','Gabon',1,65000.00,3);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Alexandre','Lacazette','France',null,57000.00,3);
+null,'Alexandre','Lacazette','France',1,57000.00,3);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Matteo','Guendouzi','France',null,15000.00,3);
+null,'Matteo','Guendouzi','France',2,15000.00,3);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Denis','Suarez','Spain',null,32000.00,3);
+null,'Denis','Suarez','Spain',2,32000.00,3);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Rob','Holding','England',null,22000.00,3);
+null,'Rob','Holding','England',3,22000.00,3);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Nacho','Monreal','Spain',null,35000.00,3);
+null,'Nacho','Monreal','Spain',3,35000.00,3);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Petr','Cech','Czech Republic',null,75000.00,3);
+null,'Petr','Cech','Czech Republic',4,75000.00,3);
 
 /* team 4 */
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Harry','Kane','England',null,78000.00,4);
+null,'Harry','Kane','England',1,78000.00,4);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Son','Heung-Min','South Korea',null,59000.00,4);
+null,'Son','Heung-Min','South Korea',1,59000.00,4);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Christian','Eriksen','Denmark',null,120000.00,4);
+null,'Christian','Eriksen','Denmark',2,120000.00,4);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Victor','Wanyama','Kenya',null,36000.00,4);
+null,'Victor','Wanyama','Kenya',2,36000.00,4);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Davinson','Sanchez','Columbia',null,37000.00,4);
+null,'Davinson','Sanchez','Columbia',3,37000.00,4);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Jan','Vertongen','Belgium',null,68000.00,4);
+null,'Jan','Vertongen','Belgium',3,68000.00,4);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Hugo','Lloris','France',null,89000.00,4);
+null,'Hugo','Lloris','France',4,89000.00,4);
 
 /*team 5*/
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Mohamed','Salah','Egypt',null,198000.00,5);
+null,'Mohamed','Salah','Egypt',1,198000.00,5);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Roberto','Firmino','Brazil',null,152000.00,5);
+null,'Roberto','Firmino','Brazil',1,152000.00,5);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'James','Milner','England',null,50000.00,5);
+null,'James','Milner','England',2,50000.00,5);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Naby','Keita','Guinea',null,77000.00,5);
+null,'Naby','Keita','Guinea',2,77000.00,5);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Virgil','Van Dijk','Netherlands',null,137000.00,5);
+null,'Virgil','Van Dijk','Netherlands',3,137000.00,5);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Dejan','Lovren','Croatia',null,60000.00,5);
+null,'Dejan','Lovren','Croatia',3,60000.00,5);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Alisson','Becker','Brazil',null,59000.00,5);
+null,'Alisson','Becker','Brazil',4,59000.00,5);
 
 /*team 6*/
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Sergio','Aguero','Argentina',null,165000.00,6);
+null,'Sergio','Aguero','Argentina',1,165000.00,6);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Gabriel','Jesus','Brazil',null,62000.00,6);
+null,'Gabriel','Jesus','Brazil',1,62000.00,6);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Leroy','Sane','Germany',null,70000.00,6);
+null,'Leroy','Sane','Germany',1,70000.00,6);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Kevin','De Bruyne','Belgium',null,217000.00,6);
+null,'Kevin','De Bruyne','Belgium',2,217000.00,6);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'John','Stones','England',null,67000.00,6);
+null,'John','Stones','England',3,67000.00,6);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Kyle','Walker','England',null,77000.00,6);
+null,'Kyle','Walker','England',3,77000.00,6);
 
 insert into player (id,name,surname,nationality,positions,salary,team) values(
-null,'Ederson','Moraes','Brazil',null,79000.00,6);
+null,'Ederson','Moraes','Brazil',4,79000.00,6);
 
 
 /*trophy insert*/
