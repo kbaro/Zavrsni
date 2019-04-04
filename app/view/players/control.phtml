@@ -17,11 +17,11 @@
 <select name="positions" id="positions">
     <option value="0">Choose</option>
 
-    <?php foreach(Player::read(1) as $positions): ?>
+    <?php foreach(Player::read(1) as $player): ?>
 
         <option
 
-            <?php if(Request::post("positions")==$positions->id):?>
+            <?php if(Request::post("positions")==$player->id):?>
                 selected="selected"
             <?php endif;?>
 

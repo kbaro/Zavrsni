@@ -17,9 +17,11 @@ class Player
                     a.positions,
                     a.salary,
                     a.team,
-                    b.title
+                    b.title,
+                    c.position_name as positions
                     from player as a
                     left join team as b on b.id = a.team
+                    left join positions c on c.id = a.positions
                     group by 
                     a.id,
                     a.name,

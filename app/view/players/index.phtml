@@ -3,8 +3,9 @@
 </a>
 
 
-<form autocomplete="on"  method="post" action="<?php echo App::config("url") ?>player/search">
-    Search: <input type="search" name="search" required/>
+<form  method="post" action="<?php echo App::config("url") ?>player/search">
+    Search: <input type="search" name="search" value="<?php echo $_POST["search"] ?>" />
+
 
     <input class="button" type="submit" value="Search" />
 
@@ -40,13 +41,13 @@
                     <i class="fas fa-edit fa-2x"></i>
                 </a>
 
-                
+
                     <a style="margin-left: 20px;"
                      href="<?php echo App::config("url") ?>player/delete/<?php echo $player->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
-               
-            
+
+
 
             </td>
         </tr>

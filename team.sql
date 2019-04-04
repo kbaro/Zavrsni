@@ -45,8 +45,7 @@ team    int
 
 create table positions(
 id   int primary key auto_increment not null,
-position_name  varchar(255),
-player int
+position_name  varchar(255)
 );
 
 
@@ -71,11 +70,11 @@ null,'Kristijan','Baro','baro.kristijan@gmail.com','$2y$10$ZHXft4hWvvgl8HIzHc4FE
 
 /*position insert */
 
-insert into positions(id,position_name,player) values
-(null,'Striker', null),
-(null,'Midfielder',null),
-(null,'Defender',null),
-(null,'Goalkeeper',null)
+insert into positions(id,position_name) values
+(null,'Striker'),
+(null,'Midfielder'),
+(null,'Defender'),
+(null,'Goalkeeper')
 ;
 
 /*manager insert */
