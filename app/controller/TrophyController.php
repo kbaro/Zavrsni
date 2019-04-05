@@ -83,13 +83,7 @@ class TrophyController extends ProtectedController
     {
         $view = new View();
         $trophy = Trophy::find($id);
-        $_POST["team"]=$trophy->team;
-        $_POST["league_name"]=$trophy->league_name;
-        $_POST["cup_name"]=$trophy->cup_name;
-        $_POST["supercup_name"]=$trophy->supercup_name;
-        $_POST["times_won_league"]=$trophy->times_won_league;
-        $_POST["times_won_cup"]=$trophy->times_won_cup;
-        $_POST["times_won_supercup"]=$trophy->times_won_supercup;
+        $_POST["trophy_name"]=$trophy->trophy_name;
         $_POST["id"]=$trophy->id;
 
         $view->render(

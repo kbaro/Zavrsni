@@ -11,7 +11,6 @@ create table team(
 	ground varchar(255),
 	ground_capacity varchar(255),
 	since varchar(255),
-	trophy int,
 	city varchar(255)
 );
 
@@ -27,13 +26,14 @@ create table player(
 
 create table trophy(
 	id int primary key auto_increment not null,
-	team int,
-	league_name varchar(255),
-	cup_name varchar(255),
-	supercup_name varchar(255),
-	times_won_league varchar(255),
-	times_won_cup varchar(255),
-	times_won_supercup varchar(255)
+	trophy_name varchar (255)
+);
+
+create table team_trophy(
+  id        int primary key auto_increment not null,
+	team      int,
+	trophy    int,
+	times_won int
 );
 
 create table manager(
@@ -51,8 +51,8 @@ position_name  varchar(255)
 alter table player add foreign key (team) references team(id);
 alter table player add foreign key (positions) references positions(id);
 alter table team add foreign key (manager) references manager(id);
-alter table team add foreign key (trophy) references trophy(id);
-alter table trophy add foreign key (team) references team(id);
+alter table team_trophy add foreign key (trophy) references trophy(id);
+alter table team_trophy add foreign key (team) references team(id);
 
 /*operator insert*/
 
@@ -93,23 +93,23 @@ insert into manager(id,name,surname) values
 
 /*team insert*/
 
-insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Manchester',8,'Old Traford',45000,1900,null,'Manchester');
+insert into team (id,title,manager,ground,ground_capacity,since,city) values(
+null,'Manchester',8,'Old Traford',45000,1900,'Manchester');
 
-insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Chelsea',7,'Bridge',30000,1905,null,'London');
+insert into team (id,title,manager,ground,ground_capacity,since,city) values(
+null,'Chelsea',7,'Bridge',30000,1905,'London');
 
-insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Arsenal',4,'Emirates',40000,1904,null,'London');
+insert into team (id,title,manager,ground,ground_capacity,since,city) values(
+null,'Arsenal',4,'Emirates',40000,1904,'London');
 
-insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Spurs',5,'Lane',35000,1900,null,'London');
+insert into team (id,title,manager,ground,ground_capacity,since,city) values(
+null,'Spurs',5,'Lane',35000,1900,'London');
 
-insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'Liverpool',2,'Anfield',40000,1904,null,'Liverpool');
+insert into team (id,title,manager,ground,ground_capacity,since,city) values(
+null,'Liverpool',2,'Anfield',40000,1904,'Liverpool');
 
-insert into team (id,title,manager,ground,ground_capacity,since,trophy,city) values(
-null,'City',3,'Etihad',30000,2000,null,'Manchester');
+insert into team (id,title,manager,ground,ground_capacity,since,city) values(
+null,'City',3,'Etihad',30000,2000,'Manchester');
 
 
 /*player insert*/
@@ -250,23 +250,20 @@ null,'Ederson','Moraes','Brazil',4,79000.00,6);
 
 /*trophy insert*/
 
-insert into trophy (id,team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) values(
-null,1,'Republic League','Republic Cup','Republic Supercup','13','5','6');
+insert into trophy (id,trophy_name) values(
+null,'Republic League'),
+(null,'Republic Cup'),
+(null,'Republic SuperCup');
 
-insert into trophy (id,team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) values(
-null,2,'Republic League','Republic Cup','Republic Supercup','5','3','4');
+/* team_trophy insert */
 
-insert into trophy (id,team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) values(
-null,3,'Republic League','Republic Cup','Republic Supercup','3','7','1');
+insert into team_trophy(id,team,trophy,times_won)values(
+null,1,1,20),
+(null,1,2,15),
+(null,1,3,6),
+(null,2,1,17),
+(null,3,2,7);
 
-insert into trophy (id,team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) values(
-null,4,'Republic League','Republic Cup','Republic Supercup','0','1','0');
-
-insert into trophy (id,team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) values(
-null,5,'Republic League','Republic Cup','Republic Supercup','0','4','3');
-
-insert into trophy (id,team,league_name,cup_name,supercup_name,times_won_league,times_won_cup,times_won_supercup) values(
-null,6,'Republic League','Republic Cup','Republic Supercup','3','7','5');
 
 
 

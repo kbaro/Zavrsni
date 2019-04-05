@@ -123,7 +123,6 @@ class TeamController extends ProtectedController
         $_POST["ground"]=$team->ground;
         $_POST["ground_capacity"]=$team->ground_capacity;
         $_POST["since"]=$team->since;
-        $_POST["trophy"]=$team->trophy;
         $_POST["city"]=$team->city;
         $_POST["id"]=$team->id;
 

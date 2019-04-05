@@ -15,16 +15,11 @@ class Team
                     a.ground,
                     a.ground_capacity,
                     a.since,
-                    a.trophy,
                     a.city,
-                    b.times_won_league,
-                    b.times_won_cup,
-                    b.times_won_supercup,
-                    c.name,
-                    c.surname as manager
+                    b.name,
+                    b.surname as manager
                     from 
-                    team a left join trophy b on a.id = b.team
-                    left join manager c on c.id = a.manager
+                    team a left join manager b on b.id = a.manager
                     group by 
                     a.id,
                     a.title,
@@ -32,7 +27,6 @@ class Team
                     a.ground,
                     a.ground_capacity,
                     a.since,
-                    a.trophy,
                     a.city
                     order by a.title
 
@@ -90,7 +84,6 @@ class Team
         ground=:ground,
         ground_capacity=:ground_capacity,
         since=:since,
-        trophy=:trophy,
         city=:city
         where id=:id");
         $data = self::data();
@@ -115,7 +108,6 @@ class Team
             "ground"=>Request::post("ground"),
             "ground_capacity"=>Request::post("ground_capacity"),
             "since"=>Request::post("since"),
-            "trophy"=>Request::post("trophy"),
             "city"=>Request::post("city")
         ];
     }

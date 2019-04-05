@@ -15,15 +15,13 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach($trophys as $trophy): ?>
+        <?php foreach($team_trophy as $trophy): ?>
         <tr>
+            <td><?php echo $trophy->id ?></td>
             <td><?php echo $trophy->team ?></td>
-            <td><?php echo $trophy->league_name ?></td>
-            <td><?php echo $trophy->cup_name ?></td>
-            <td><?php echo $trophy->supercup_name ?></td>
-            <td><?php echo $trophy->times_won_league ?></td>
-            <td><?php echo $trophy->times_won_cup ?></td>
-            <td><?php echo $trophy->times_won_supercup ?></td>
+            <td><?php echo $trophy->trophy ?></td>
+            <td><?php echo $trophy->times_won ?></td>
+
 
             <td> 
                 <a href="<?php echo App::config("url") ?>trophy/prepareedit/<?php echo $trophy->id ?>">

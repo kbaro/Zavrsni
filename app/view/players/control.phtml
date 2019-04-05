@@ -1,3 +1,11 @@
+<?php
+$head = "<link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css\">";
+
+$js="
+ <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
+ <script src=\"" . APP::config("url") . "public/js/countrylist.js\"></script>";
+?>
+
 <label>Name
     <input type="text" name="name"
            value="<?php echo Request::post("name") ?>" />
@@ -8,20 +16,33 @@
            value="<?php echo Request::post("surname") ?>" />
 </label>
 
-<label>Nationality
-    <input type="text" name="nationality"
-           value="<?php echo Request::post("nationality") ?>" />
-</label>
+<label for="nationality">Nationality</label>
+<select name="nationality" id="nationality">
+    <option value="">Choose</option>
+
+    <?php foreach(Nationality::read() as $nationality): ?>
+
+        <option
+
+            <?php if(Request::post("nationality") == $nationality->id):?>
+                selected="selected"
+            <?php endif;?>
+
+                value="<?php echo $nationality->id ?>"><?php echo $nationality->position_name ?></option>
+
+    <?php endforeach; ?>
+
+</select>
 
 <label for="positions">Position</label>
 <select name="positions" id="positions">
-    <option value="0">Choose</option>
+    <option value="">Choose</option>
 
     <?php foreach(Positions::read() as $positions): ?>
 
         <option
 
-            <?php if(Request::post("position") == $positions->id):?>
+            <?php if(Request::post("positions") == $positions->id):?>
                 selected="selected"
             <?php endif;?>
 
