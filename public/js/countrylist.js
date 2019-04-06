@@ -13,3 +13,7 @@ var country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguil
     ,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
     ,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay"
     ,"Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+
+for(var i=0;i<country_list.length;i++){
+    $("#nationality").append("<option value=\"" + i + "\">" + country_list[i] + "</option>");
+}

@@ -20,18 +20,6 @@ $js="
 <select name="nationality" id="nationality">
     <option value="">Choose</option>
 
-    <?php foreach(Nationality::read() as $nationality): ?>
-
-        <option
-
-            <?php if(Request::post("nationality") == $nationality->id):?>
-                selected="selected"
-            <?php endif;?>
-
-                value="<?php echo $nationality->id ?>"><?php echo $nationality->position_name ?></option>
-
-    <?php endforeach; ?>
-
 </select>
 
 <label for="positions">Position</label>
