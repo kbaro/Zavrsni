@@ -10,12 +10,8 @@ class Trophy
         
                     select 
                     id,
-                    team,
-                    trophy,
-                    times_won
-                   from 
-                    team_trophy
-                 
+                    trophy_name
+                   from trophy
 
         ");
         $expression->execute();

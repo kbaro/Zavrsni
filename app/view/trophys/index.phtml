@@ -4,26 +4,22 @@
 <table>
     <thead>
         <tr>
+            <th>Trophy name</th>
             <th>Team</th>
-            <th>League name</th>
-            <th>Cup name</th>
-            <th>Supercup name</th>
-            <th>Times won league</th>
-            <th>Times won cup</th>
-            <th>Times won supercup</th>
-            <th>Edit / Delete</th>
+            <th>Times won</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach($team_trophy as $trophy): ?>
+        <?php foreach($trophys as $trophy): ?>
+        <?php foreach ($team_trophys as $tt): ?>
         <tr>
-            <td><?php echo $trophy->id ?></td>
-            <td><?php echo $trophy->team ?></td>
-            <td><?php echo $trophy->trophy ?></td>
-            <td><?php echo $trophy->times_won ?></td>
+            <?php if($trophy->trophy_name === $tt->trophy_name): ?>
+            <a href="<?= App::config("url")?>/team_trophys/index/<?= $tt->trophy?>"> <?= $trophy->trophy_name ?></a>
+            <?php endif;?>
+            <td>
 
 
-            <td> 
                 <a href="<?php echo App::config("url") ?>trophy/prepareedit/<?php echo $trophy->id ?>">
                     <i class="fas fa-edit fa-2x"></i>
                 </a>
@@ -37,6 +33,7 @@
             
              </td>
         </tr>
+        <?php endforeach;?>
         <?php endforeach;?>
     </tbody>
     

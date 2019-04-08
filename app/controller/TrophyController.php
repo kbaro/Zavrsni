@@ -2,6 +2,13 @@
 
 class TrophyController extends ProtectedController
 {
+
+    public function index()
+    {
+        $view = new View;
+        $view->render("trophys/trophy", ["trophys" => Trophy::read, "team_trophys" => Team_trophy::read]);
+    }
+
     function add()
     {
 
@@ -57,8 +64,8 @@ class TrophyController extends ProtectedController
         }
 
         $db = Db::getInstance();
-        $expression = $db->prepare("select count(id) from trophy where league_name=:league_name and id<>:id");
-        $expression->execute(["league_name"=>Request::post("league_name"), "id" => Request::post("id")]);
+        $expression = $db->prepare("select count(id) from team_trophy where trophy=:trophy and id<>:id");
+        $expression->execute(["league_name"=>Request::post("trophy"), "id" => Request::post("id")]);
         $total = $expression->fetchColumn();
         if($total>0){
             return "League name already exists.";
@@ -94,14 +101,4 @@ class TrophyController extends ProtectedController
         );
     }
 
-
-    function index(){
-        $view = new View();
-        $view->render(
-            'trophys/index',
-            [
-                "trophys"=>Trophy::read()
-            ]
-        );
-    }
 }

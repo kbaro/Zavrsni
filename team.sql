@@ -26,7 +26,7 @@ create table player(
 
 create table trophy(
 	id int primary key auto_increment not null,
-	trophy_name varchar (255)
+	trophy_name varchar (255),
 );
 
 create table team_trophy(
@@ -45,6 +45,14 @@ surname varchar(255)
 create table positions(
 id   int primary key auto_increment not null,
 position_name  varchar(255)
+);
+
+create table results(
+  id int primary key auto_increment not null,
+  score1 varchar (2),
+  score2 varchar (2),
+  team int,
+  player int
 );
 
 
@@ -263,6 +271,7 @@ null,1,1,20),
 (null,1,3,6),
 (null,2,1,17),
 (null,3,2,7);
+
 
 
 
