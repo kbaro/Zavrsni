@@ -4,7 +4,7 @@
 
         public function index(){
         $view = new View;
-        $view ->render("trophys/team_trophy" , ["team_trophys" => Team_Trophy::read]);
+        $view ->render("trophys/team_trophy" , ["team_trophys" => Team_Trophy::read()]);
                 
                 }
                 }

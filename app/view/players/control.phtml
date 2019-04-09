@@ -6,6 +6,7 @@ $js="
  <script src=\"" . APP::config("url") . "public/js/countrylist.js\"></script>";
 ?>
 
+
 <label>Name
     <input type="text" name="name"
            value="<?php echo Request::post("name") ?>" />
@@ -18,7 +19,7 @@ $js="
 
 <label for="nationality">Nationality</label>
 <select name="nationality" id="nationality">
-    <option value="">Choose</option>
+    <option value="0">Choose</option>
 
 </select>
 
@@ -46,6 +47,12 @@ $js="
            value="<?php echo Request::post("salary") ?>" />
 </label>
 
+<label>Photo
+    <input type="file" name="image" class="custom-file"
+           value="<?php echo Request::post("photo")?>" />
+
+</label>
+
 <label for="team">Team</label>
 <select name="team" id="team">
     <option value="0">Choose</option>
@@ -63,4 +70,5 @@ $js="
     <?php endforeach; ?>
 
 </select>
+
 

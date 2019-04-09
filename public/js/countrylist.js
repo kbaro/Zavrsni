@@ -15,5 +15,5 @@ var country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguil
     ,"Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
 for(var i=0;i<country_list.length;i++){
-    $("#nationality").append("<option value=\"" + i + "\">" + country_list[i] + "</option>");
+    $("#nationality").append("<option value=\"" + country_list[i] + "\">" + country_list[i] + "</option>");
 }

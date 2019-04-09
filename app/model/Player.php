@@ -17,19 +17,21 @@ class Player
                     a.positions,
                     a.salary,
                     a.team,
+                    a.photo,
                     b.title,
                     c.position_name as positions
                     from player as a
                     left join team as b on b.id = a.team
                     left join positions c on c.id = a.positions
-                    group by 
+                    group by
                     a.id,
                     a.name,
                     a.surname,
                     a.nationality,
                     a.positions,
                     a.salary,
-                    a.team
+                    a.team,
+                    a.photo
                     order by a.team
                     limit ". (($page*$perPage)- $perPage)  . ",$perPage
 
@@ -76,8 +78,8 @@ class Player
     public static function add()
     {
         $db = Db::getInstance();
-        $expression = $db->prepare("insert into player (name,surname,nationality,positions,salary,team) 
-        values (:name,:surname,:nationality,:positions,:salary,:team)");
+        $expression = $db->prepare("insert into player (name,surname,nationality,positions,salary,photo,team) 
+        values (:name,:surname,:nationality,:positions,:salary,:photo,:team)");
         $expression->execute(self::data());
     }
 
@@ -90,6 +92,7 @@ class Player
         nationality=:nationality,
         positions=:positions,
         salary=:salary,
+        photo=:photo,
         team=:team
         where id=:id");
         $data = self::data();
@@ -114,6 +117,7 @@ class Player
             "nationality"=>Request::post("nationality"),
             "positions"=>Request::post("positions"),
             "salary"=>Request::post("salary"),
+            "photo"=>Request::files("photo"),
             "team"=>Request::post("team")
         ];
     }

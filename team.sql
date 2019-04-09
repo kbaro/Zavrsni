@@ -11,6 +11,7 @@ create table team(
 	ground varchar(255),
 	ground_capacity varchar(255),
 	since varchar(255),
+	logo varchar (255),
 	city varchar(255)
 );
 
@@ -21,16 +22,19 @@ create table player(
 	nationality varchar(255),
 	positions int,
 	salary DECIMAL(18,2),
+	photo varchar (255),
     team int
 );
 
 create table trophy(
 	id int primary key auto_increment not null,
 	trophy_name varchar (255),
+	photo varchar (255)
 );
 
 create table team_trophy(
   id        int primary key auto_increment not null,
+	year_won int,
 	team      int,
 	trophy    int,
 	times_won int
@@ -61,6 +65,8 @@ alter table player add foreign key (positions) references positions(id);
 alter table team add foreign key (manager) references manager(id);
 alter table team_trophy add foreign key (trophy) references trophy(id);
 alter table team_trophy add foreign key (team) references team(id);
+alter table results add foreign key (team) references team(id);
+alter table results add foreign key (player) references player(id);
 
 /*operator insert*/
 
@@ -265,12 +271,18 @@ null,'Republic League'),
 
 /* team_trophy insert */
 
-insert into team_trophy(id,team,trophy,times_won)values(
-null,1,1,20),
-(null,1,2,15),
-(null,1,3,6),
-(null,2,1,17),
-(null,3,2,7);
+insert into team_trophy(id,year_won,team,trophy,times_won)values
+(null ,1995 ,2,1,20),
+(null,1997 , 2,1,15),
+(null,2017,6,1,6),
+(null,2018,2,1,17),
+(null,1999 ,1,1,7),
+(null,2017,3,2,6),
+(null,2018,4,2,17),
+(null,2000 ,5,2,7),
+(null ,2015 ,1,3,20),
+(null,2016 , 2,3,15),
+(null,2019 ,5,3,7);
 
 
 

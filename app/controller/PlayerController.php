@@ -101,6 +101,7 @@ class PlayerController extends ProtectedController
         $_POST["nationality"] = $player->nationality;
         $_POST["positions"] = $player->positions;
         $_POST["salary"] = $player->salary;
+        $_FILES["photo"] = $player->photo;
         $_POST["team"] = $player->team;
         $_POST["id"] = $player->id;
 

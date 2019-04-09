@@ -6,7 +6,7 @@ class TrophyController extends ProtectedController
     public function index()
     {
         $view = new View;
-        $view->render("trophys/trophy", ["trophys" => Trophy::read, "team_trophys" => Team_trophy::read]);
+        $view->render("trophys/trophy", ["trophys" => Trophy::read(), "team_trophys" => Team_trophy::read()]);
     }
 
     function add()
