@@ -53,9 +53,8 @@ position_name  varchar(255)
 
 create table results(
   id int primary key auto_increment not null,
-  score1 varchar (2),
-  score2 varchar (2),
-  team int,
+  team1 int,
+  team2 int,
   player int
 );
 
@@ -65,8 +64,8 @@ alter table player add foreign key (positions) references positions(id);
 alter table team add foreign key (manager) references manager(id);
 alter table team_trophy add foreign key (trophy) references trophy(id);
 alter table team_trophy add foreign key (team) references team(id);
-alter table results add foreign key (team) references team(id);
-alter table results add foreign key (player) references player(id);
+alter table results add foreign key (team1) references team1(id);
+alter table results add foreign key (team2) references team2(id);
 
 /*operator insert*/
 
