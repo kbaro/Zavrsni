@@ -117,7 +117,7 @@ class Player
             "nationality"=>Request::post("nationality"),
             "positions"=>Request::post("positions"),
             "salary"=>Request::post("salary"),
-            "photo"=>Request::files("photo"),
+            "photo"=>Request::post("photo"),
             "team"=>Request::post("team")
         ];
     }

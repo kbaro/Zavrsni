@@ -10,7 +10,8 @@ class Trophy
         
                     select 
                     id,
-                    trophy_name
+                    trophy_name,
+                    photo
                    from trophy
 
         ");

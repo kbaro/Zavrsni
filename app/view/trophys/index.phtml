@@ -1,40 +1,34 @@
-<a href="<?php echo App::config("url") ?>trophy/prepareadd" class="success button expanded">
-    ADD NEW TROPHY
-</a>
-<table>
+
+<table class="grid-container">
     <thead>
         <tr>
-            <th>Trophy name</th>
-            <th>Team</th>
-            <th>Times won</th>
-            <th></th>
+            <th style="text-align: center">Trophy name</th>
+
         </tr>
     </thead>
-    <tbody>
+    <tbody class="cell large-3">
+
         <?php foreach($trophys as $trophy): ?>
-        <?php foreach ($team_trophys as $tt): ?>
         <tr>
-            <?php if($trophy->trophy_name === $tt->trophy_name): ?>
-            <a href="<?= App::config("url")?>/team_trophys/index/<?= $tt->trophy?>"> <?= $trophy->trophy_name ?></a>
-            <?php endif;?>
-            <td>
+            <?php if($trophy->id === "1"): ?>
+                <td class="success callout operators">
+            <a href="<?= App::config("url")?>team_trophy/republicLeague"> <?= $trophy->trophy_name ?></a>
+              </td>
 
+            <?php elseif($trophy->id ==="2"): ?>
+                <td class="success callout operators">
+                    <a href="<?= App::config("url")?>team_trophy/republicCup"> <?= $trophy->trophy_name ?></a>
+                </td>
 
-                <a href="<?php echo App::config("url") ?>trophy/prepareedit/<?php echo $trophy->id ?>">
-                    <i class="fas fa-edit fa-2x"></i>
-                </a>
-
-                <?php if($trophy->total==0): ?>
-                    <a style="color: red;"
-                     href="<?php echo App::config("url") ?>trophy/delete/<?php echo $trophy->id ?>">
-                        <i class="fas fa-trash fa-2x"></i>
-                    </a>
-                <?php endif; ?>
-            
-             </td>
+            <?php elseif($trophy->id ==="3"): ?>
+                <td class="success callout operators">
+                    <a href="<?= App::config("url")?>team_trophy/republicSuperCup"> <?= $trophy->trophy_name ?></a>
+                </td>
+              <?php endif; ?>
         </tr>
-        <?php endforeach;?>
-        <?php endforeach;?>
+
+        <?php endforeach; ?>
+
     </tbody>
-    
+
 </table>

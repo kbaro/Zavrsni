@@ -1,10 +1,33 @@
 <?php
 
-    class Team_TrophyController extends ProtectedController{
+class Team_TrophyController extends ProtectedController{
 
-        public function index(){
-        $view = new View;
-        $view ->render("trophys/team_trophy" , ["team_trophys" => Team_Trophy::read()]);
-                
-                }
-                }
+
+
+
+    public function republicLeague()
+    {
+
+        $view = new View();
+        $view->render("trophys/trophyWin", ["trophys" => Trophy::read(), "trophyWin" => Team_Trophy::read(1)]);
+
+    }
+
+    public function republicCup()
+    {
+
+        $view = new View();
+        $view->render("trophys/trophyWin", ["trophys" => Trophy::read(), "trophyWin" => Team_Trophy::read(2)]);
+
+    }
+
+    public function republicSuperCup()
+    {
+
+        $view = new View();
+        $view->render("trophys/trophyWin", ["trophys" => Trophy::read(), "trophyWin" => Team_Trophy::read(3)]);
+
+    }
+
+
+}
