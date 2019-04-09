@@ -6,139 +6,48 @@
         <h4><a href="<?= App::config("url")?>team_trophy/republicLeague"> <?= $trophy->trophy_name ?></a></h4>
 
 
-                <table>
-
-                    <thead>
-                    <tr>
-                        <th>Team</th>
-                        <th>Year won</th>
-                        <th>Times won</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-        <?php foreach ($trophyWin as $tt): ?>
-
-            <?php if($trophy->id === $tt ->trophy): ?>
-
-                    <tr>
-
-                        <td>
-                            <?= $tt ->title ?>
-
-                        </td>
-
-                        <td>
-                            <?= $tt ->year_won ?>
-                        </td>
-
-                        <td>
-                            <?= $tt ->times_won ?>
-                        </td>
-                    </tr>
-
-
-
-
-            <?php endif ?>
-        <?php endforeach; ?>
-                </tbody>
-                </table>
     <?php endif ?>
 
 
 
-    <?php if($trophy->id ==="2"):  ?>
 
-        <h4><a href="<?= App::config("url")?>team_trophy/republicCup"> <?= $trophy->trophy_name ?></a></h4>
+        <table>
 
-                <table>
-
-                    <thead>
-                    <tr>
-                        <th>Team</th>
-                        <th>Year won</th>
-                        <th>Times won</th>
-
-                    </tr>
-                    </thead>
-                <tbody>
-        <?php foreach ($trophyWin as $tt): ?>
-
-            <?php if($trophy->id === $tt ->trophy): ?>
-
-                    <tr>
-
-                        <td>
-                            <?= $tt ->title ?>
-
-                        </td>
-
-                        <td>
-                            <?= $tt ->year_won ?>
-                        </td>
-
-                        <td>
-                            <?= $tt ->times_won ?>
-                        </td>
-                    </tr>
+            <thead>
+            <tr>
+                <th>Team</th>
+                <th>year won</th>
+                <th>Times won</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+    <?php foreach ($trophyWin as $tt): ?>
+        <?php if($trophy->id === $tt ->trophy)  : ?>
 
 
 
+                <tr>
 
+                    <td>
+                        <?= $tt ->title ?>
+
+                    </td>
+
+                    <td>
+                        <?= $tt ->yearWin ?>
+                    </td>
+
+                    <td>
+                        <?= $tt ->times_won ?>
+                    </td>
+                </tr>
             <?php endif ?>
         <?php endforeach; ?>
-                </tbody>
-                </table>
-    <?php endif ?>
-
-    <?php if($trophy->id ==="3") : ?>
-
-        <h4><a href="<?= App::config("url")?>team_trophy/republicSuperCup"> <?= $trophy->trophy_name ?></a></h4>
-
-                <table>
-
-                    <thead>
-                    <tr>
-                        <th>Team</th>
-                        <th>Year won</th>
-                        <th>Times won</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-        <?php foreach ($trophyWin as $tt): ?>
-
-            <?php if($trophy->id === $tt ->trophy): ?>
-                    <tr>
-
-                        <td>
-                            <?= $tt ->title ?>
-
-                        </td>
-
-                        <td>
-                            <?= $tt ->year_won ?>
-                        </td>
-
-                        <td>
-                            <?= $tt ->times_won ?>
-                        </td>
-                    </tr>
+            </tbody>
 
 
-
-            <?php endif ?>
-        <?php endforeach; ?>
-                    </tbody>
-                </table>
-
-    <?php endif ?>
-    <hr />
-
-
+        </table>
 
 
 <?php endforeach; ?>
-
-
