@@ -110,7 +110,9 @@ class Player
     }
 
 
-    private static function data(){
+
+
+        private static function data(){
         return [
             "name"=>Request::post("name"),
             "surname"=>Request::post("surname"),

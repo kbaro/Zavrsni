@@ -46,16 +46,39 @@ create table manager(
 	surname varchar(255)
 );
 
+create table referee(
+  id int primary key auto_increment not null,
+  referee_name varchar (255),
+  referee_surname varchar (255)
+);
+
 create table positions(
 	id   int primary key auto_increment not null,
 	position_name  varchar(255)
 );
 
-create table fixture(
+create table fixtures(
   id int primary key auto_increment not null,
-  team_1 int,
-  team_2 int,
+  f_date int,
+  f_time int,
+  home_team int,
+  away_team int,
+  referee int,
   player int
+);
+
+create table fixtures_player(
+  id int primary key auto_increment not null,
+  fixtures int,
+  team int,
+  player int
+);
+
+create table goalscorer(
+  id int primary key auto_increment not null,
+  fixtures int,
+  player int,
+  team int
 );
 
 
@@ -64,9 +87,17 @@ alter table player add foreign key (positions) references positions(id);
 alter table team add foreign key (manager) references manager(id);
 alter table team_trophy add foreign key (trophy) references trophy(id);
 alter table team_trophy add foreign key (team) references team(id);
-alter table fixture add foreign key (team_1) references team(id);
-alter table fixture add foreign key (team_2) references team(id);
-alter table fixture add foreign key (player) references player(id);
+alter table fixtures add foreign key (home_team) references team(id);
+alter table fixtures add foreign key (away_team) references team(id);
+alter table fixtures add foreign key (referee) references referee(id);
+alter table fixtures_player add foreign key (fixtures) references fixtures(id);
+alter table fixtures_player add foreign key (team) references team(id);
+alter table fixtures_player add foreign key (player) references player(id);
+alter table goalscorer add foreign key (fixtures) references fixtures(id);
+alter table goalscorer add foreign key (player) references player(id);
+alter table goalscorer add foreign key (team) references team(id);
+
+
 
 /*operator insert*/
 
@@ -181,13 +212,16 @@ insert into team (id,title,manager,ground,ground_capacity,since,logo,city) value
 
 insert into team_trophy(id,year_won,team,trophy,times_won)values
 (null ,1995 ,2,1,20),
+(null,1996 , 2,1,15),
 (null,1997 , 2,1,15),
-(null,2017,6,1,6),
-(null,2018,2,1,17),
-(null,1999 ,1,1,7),
+(null,1998 , 2,2,15),
+(null,1999 , 2,2,15),
+(null,2000 ,1,2,7),
+(null,2017,6,3,6),
+(null,2018,2,2,17),
 (null,2017,3,2,6),
 (null,2018,4,2,17),
-(null,2000 ,5,2,7),
+(null,2001 ,5,2,7),
 (null ,2015 ,1,3,20),
 (null,2016 , 2,3,15),
 (null,2019 ,5,3,7);

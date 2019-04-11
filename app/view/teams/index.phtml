@@ -20,7 +20,9 @@
             <th>Ground Capacity</th>
             <th>Since</th>
             <th>City</th>
+            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
             <th>Edit / Delete</th>
+            <?php endif; ?>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +36,7 @@
             <td><?php echo $team->since ?></td>
             <td><?php echo $team->city ?></td>
 
+            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
             <td> 
                 <a href="<?php echo App::config("url") ?>team/prepareedit/<?php echo $team->id ?>">
                     <i class="fas fa-edit fa-2x"></i>
@@ -47,8 +50,15 @@
                 <?php endif; ?>
             
              </td>
+            <?php endif; ?>
         </tr>
         <?php endforeach;?>
+        <nav aria-label="Pagination">
+            <ul class="pagination text-center">
+                <li class="pagination-previous"><a href="<?php echo App::config("url") ?>team/index/<?php echo $previous ?>" aria-label="Next page">Previous <span class="show-for-sr">page</span></a></li>
+                <li class="pagination-next"><a href="<?php echo App::config("url") ?>team/index/<?php echo $next ?>" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+            </ul>
+        </nav>
     </tbody>
 
 </table>

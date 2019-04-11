@@ -23,8 +23,9 @@
         <th>Salary</th>
         <th>Photo</th>
         <th>Team</th>
+        <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
         <th>Edit / Delete</th>
-
+        <?php endif; ?>
     </tr>
     </thead>
     <tbody>
@@ -35,8 +36,10 @@
             <td><?php echo $player->nationality ?></td>
             <td><?php echo $player->positions ?></td>
             <td><?php echo $player->salary ?></td>
-            <td><?php echo $player->photo ?></td>
+            <td><img  alt="" src="<?php echo $player->photo ?>"></td>
             <td><?php echo $player->title ?></td>
+
+            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
 
             <td>
                 <a href="<?php echo App::config("url") ?>player/prepareedit/<?php echo $player->id ?>">
@@ -52,6 +55,7 @@
 
 
             </td>
+            <?php endif; ?>
         </tr>
 
 

@@ -3,8 +3,9 @@
 class Team
 {
 
-    public static function read()
+    public static function read($page)
     {
+        $perPage=5;
         $db = Db::getInstance();
         $expression = $db->prepare("
         
@@ -31,7 +32,7 @@ class Team
                     a.since,
                     a.city
                     order by a.title
-
+                    limit ". (($page*$perPage)- $perPage)  . ",$perPage
         ");
         $expression->execute();
         return $expression->fetchAll();
@@ -104,7 +105,9 @@ class Team
     }
 
 
-    private static function data(){
+
+
+        private static function data(){
         return [
             "title"=>Request::post("title"),
             "manager"=>Request::post("manager"),

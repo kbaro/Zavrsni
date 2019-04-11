@@ -1,15 +1,15 @@
-<?php foreach($trophys as $trophy): ?>
-    <img style="width: 200px; height: 200px; float: right" alt="" src="<?php echo $trophy->photo ?>">
+
 
     <?php if($trophy->id ==="1"): ?>
-
+        <img style="width: 200px; height: 200px; float: right" alt="" src="<?php echo $trophy->photo ?>">
         <h4><a href="<?= App::config("url")?>team_trophy/republicLeague"> <?= $trophy->trophy_name ?></a></h4>
 
 
-    <?php endif ?>
+    <?php endif; ?>
 
 
 
+    <?php foreach($trophys as $trophy): ?>
 
         <table>
 
@@ -43,7 +43,7 @@
                     </td>
 
                 </tr>
-            <?php endif ?>
+            <?php endif; ?>
         <?php endforeach; ?>
             </tbody>
 
@@ -51,4 +51,4 @@
         </table>
 
 
-<?php endforeach; ?>
+    <?php endforeach; ?>

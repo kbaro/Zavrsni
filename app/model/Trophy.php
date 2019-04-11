@@ -58,7 +58,7 @@ class Trophy
     private static function data(){
         return [
             "trophy_name"=>Request::post("trophy_name"),
-            "photo"=>Request::post("photo"),
+            "photo"=>Request::post("photo")
         ];
     }
 
