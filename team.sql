@@ -127,54 +127,54 @@ insert into manager(id,name,surname) values
 /*trophy insert*/
 
 insert into trophy (id,trophy_name,photo) values
-(null,'Republic League','/public/img/league.png'),
-(null,'Republic Cup','/public/img/cup.png'),
-(null,'Republic SuperCup','/public/img/supercup.svg')
+(null,'Republic League','/zavrsni/public/img/league.png'),
+(null,'Republic Cup','/zavrsni/public/img/cup.png'),
+(null,'Republic SuperCup','/zavrsni/public/img/supercup.jpg')
 ;
 
 
 /*team insert*/
 
 insert into team (id,title,manager,ground,ground_capacity,since,logo,city) values
-(null,'Arsenal',1,'Emirates Stadium',40000,1904,'/public/img/arsenal.svg','London'),
+(null,'Arsenal',1,'Emirates Stadium',40000,1904,'/zavrsni/public/img/arsenal.png','London'),
 
-(null,'AFC Bournemouth',2,'Vitality Stadium',25000,1914,'/public/img/bournemouth.svg','Bournemouth'),
+(null,'AFC Bournemouth',2,'Vitality Stadium',25000,1914,'/zavrsni/public/img/bournemouth.png','Bournemouth'),
 
-(null,'Brighton and Hove Albion',3,'Amex Stadium',30000,1920,'/public/img/brighton.svg','Brighton'),
+(null,'Brighton and Hove Albion',3,'Amex Stadium',30000,1920,'/zavrsni/public/img/brighton.png','Brighton'),
 
-(null,'Burnley',4,'Turf Moor',35000,1900,'/public/img/burnley.svg','Burnley'),
+(null,'Burnley',4,'Turf Moor',35000,1900,'/zavrsni/public/img/burnley.png','Burnley'),
 
-(null,'Cardiff City',5,'Cardiff City Stadium',15000,1915,'/public/img/cardiff.svg','Cardiff'),
+(null,'Cardiff City',5,'Cardiff City Stadium',15000,1915,'/zavrsni/public/img/cardiff.png','Cardiff'),
 
-(null,'Chelsea',6,'Stamford Bridge',50000,1905,'/public/img/chelsea.svg','London'),
+(null,'Chelsea',6,'Stamford Bridge',50000,1905,'/zavrsni/public/img/chelsea.png','London'),
 
-(null,'Crystal Palace',7,'Selhurst Park',25000,1925,'/public/img/palace.svg','London'),
+(null,'Crystal Palace',7,'Selhurst Park',25000,1925,'/zavrsni/public/img/palace.png','London'),
 
-(null,'Everton',8,'Goodison Park',45000,1902,'/public/img/everton.svg','Liverpool'),
+(null,'Everton',8,'Goodison Park',45000,1902,'/zavrsni/public/img/everton.png','Liverpool'),
 
-(null,'Fulham',9,'Craven Cottage',20000,1925,'/public/img/fulham.svg','London'),
+(null,'Fulham',9,'Craven Cottage',20000,1925,'/zavrsni/public/img/fulham.png','London'),
 
-(null,'Huddersfield Town',10,'John Smiths Stadium',18000,1930,'/public/img/hudder.svg','Huddersfield'),
+(null,'Huddersfield Town',10,'John Smiths Stadium',18000,1930,'/zavrsni/public/img/hudder.png','Huddersfield'),
 
-(null,'Leicester City',11,'King Power Stadium',32000,1943,'/public/img/leicester.svg','Leicester'),
+(null,'Leicester City',11,'King Power Stadium',32000,1943,'/zavrsni/public/img/leicester.png','Leicester'),
 
-(null,'Liverpool',12,'Anfield',50000,1904,'/public/img/liverpool.svg','Liverpool'),
+(null,'Liverpool',12,'Anfield',50000,1904,'/zavrsni/public/img/liverpool.png','Liverpool'),
 
-(null,'Manchester City',13,'Etihad Stadium',60000,2000,'/public/img/city.svg','Manchester'),
+(null,'Manchester City',13,'Etihad Stadium',60000,2000,'/zavrsni/public/img/city.png','Manchester'),
 
-(null,'Manchester United',14,'Old Trafford',75000,1900,'/public/img/united.svg','Manchester'),
+(null,'Manchester United',14,'Old Trafford',75000,1900,'/zavrsni/public/img/united.png','Manchester'),
 
-(null,'Newcastle United',15,'St.James Park',35000,1950,'/public/img/newcastle.svg','Newcastle upon Tyne'),
+(null,'Newcastle United',15,'St.James Park',35000,1950,'/zavrsni/public/img/newcastle.png','Newcastle upon Tyne'),
 
-(null,'Southampton',16,'St. Marys Stadium',20000,1960,'/public/img/soton.svg','Southampton'),
+(null,'Southampton',16,'St. Marys Stadium',20000,1960,'/zavrsni/public/img/soton.png','Southampton'),
 
-(null,'Tottenham Hotspur',17,'Tottenham Hotspur Stadium',85000,1900,'/public/img/spurs.svg','London'),
+(null,'Tottenham Hotspur',17,'Tottenham Hotspur Stadium',85000,1900,'/zavrsni/public/img/spurs.png','London'),
 
-(null,'Watford',18,'Vicarage Road',22000,1940,'/public/img/watford.svg','Watford'),
+(null,'Watford',18,'Vicarage Road',22000,1940,'/zavrsni/public/img/watford.png','Watford'),
 
-(null,'West Ham United',19,'London Stadium',40500,1920,'/public/img/westham.svg','London'),
+(null,'West Ham United',19,'London Stadium',40500,1920,'/zavrsni/public/img/westham.png','London'),
 
-(null,'Wolverhampton Wanderers',20,'Molineux Stadium',40000,1970,'/public/img/wolfs.svg','Wolverhampton')
+(null,'Wolverhampton Wanderers',20,'Molineux Stadium',40000,1970,'/zavrsni/public/img/wolfs.png','Wolverhampton')
 ;
 
 /* team_trophy insert */

@@ -1,5 +1,5 @@
 <?php foreach($trophys as $trophy): ?>
-
+    <img style="width: 200px; height: 200px; float: right" alt="" src="<?php echo $trophy->photo ?>">
 
     <?php if($trophy->id ==="1"): ?>
 
@@ -15,16 +15,16 @@
 
             <thead>
             <tr>
+
                 <th>Team</th>
                 <th>year won</th>
                 <th>Times won</th>
-                <th></th>
+
             </tr>
             </thead>
             <tbody>
     <?php foreach ($trophyWin as $tt): ?>
-        <?php if($trophy->id === $tt ->trophy)  : ?>
-
+        <?php if($trophy->id === $tt ->trophy): ?>
 
 
                 <tr>
@@ -35,12 +35,13 @@
                     </td>
 
                     <td>
-                        <?= $tt ->yearWin ?>
+                        <?= $tt ->year_won ?>
                     </td>
 
                     <td>
                         <?= $tt ->times_won ?>
                     </td>
+
                 </tr>
             <?php endif ?>
         <?php endforeach; ?>
