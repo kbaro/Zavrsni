@@ -68,6 +68,10 @@ class TeamController extends ProtectedController
             return "Since required";
         }
 
+        if(Request::post("logo")===""){
+            return "Logo required";
+        }
+
         if(Request::post("city")===""){
             return "City required";
         }
@@ -123,6 +127,7 @@ class TeamController extends ProtectedController
         $_POST["ground"]=$team->ground;
         $_POST["ground_capacity"]=$team->ground_capacity;
         $_POST["since"]=$team->since;
+        $_POST["logo"]=$team->logo;
         $_POST["city"]=$team->city;
         $_POST["id"]=$team->id;
 

@@ -15,6 +15,7 @@ class Team
                     a.ground,
                     a.ground_capacity,
                     a.since,
+                    a.logo,
                     a.city,
                     b.name,
                     b.surname as manager
@@ -22,6 +23,7 @@ class Team
                     team a left join manager b on b.id = a.manager
                     group by 
                     a.id,
+                    a.logo,
                     a.title,
                     a.manager,
                     a.ground,
@@ -70,8 +72,8 @@ class Team
     public static function add()
     {
         $db = Db::getInstance();
-        $expression = $db->prepare("insert into team (title,manager,ground,ground_capacity,since,city) 
-        values (:title,:manager,:ground,:ground_capacity,:since,:city)");
+        $expression = $db->prepare("insert into team (title,manager,ground,ground_capacity,since,logo,city) 
+        values (:title,:manager,:ground,:ground_capacity,:since,:logo,:city)");
         $expression->execute(self::data());
     }
 
@@ -84,6 +86,7 @@ class Team
         ground=:ground,
         ground_capacity=:ground_capacity,
         since=:since,
+        logo=:logo,
         city=:city
         where id=:id");
         $data = self::data();
@@ -108,6 +111,7 @@ class Team
             "ground"=>Request::post("ground"),
             "ground_capacity"=>Request::post("ground_capacity"),
             "since"=>Request::post("since"),
+            "logo"=>Request::post("logo"),
             "city"=>Request::post("city")
         ];
     }

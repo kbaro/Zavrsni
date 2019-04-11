@@ -13,6 +13,7 @@
 <table>
     <thead>
         <tr>
+            <th>Logo</th>
             <th>Title</th>
             <th>Manager</th>
             <th>Ground</th>
@@ -25,6 +26,7 @@
     <tbody>
         <?php foreach($teams as $team): ?>
         <tr>
+            <td><img alt="" src="<?php echo $team->logo ?>"></td>
             <td><?php echo $team->title ?></td>
             <td><?php echo $team->manager ?></td>
             <td><?php echo $team->ground ?></td>
