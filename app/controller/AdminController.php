@@ -21,7 +21,12 @@ class AdminController{
                 $user->email=$row->email;
                 $user->nameSurname=$row->name . " " . $row->surname;
                 Session::getInstance()->login($user);
-                $view->render('index',["message"=>"Welcome"]);
+
+                // $view->render('index',["message"=>"Welcome"]);
+
+                $tc = new TeamController();
+                $tc->index();
+
             }else{
                 $view->render('signin',["message"=>"Email or password do not match"]);
             }
