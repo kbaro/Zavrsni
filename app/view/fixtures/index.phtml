@@ -1,0 +1,50 @@
+
+<div class='content'>
+
+    <div class='byte'>
+        <div class='box bit-1'>
+            <div class='box-content results'>
+                <div class='club-info'>
+                    <div class='club-logo home'>
+                        <img src="<?=$this->tree?>assets/img/club_pics/default.png" alt="" width="150px">
+                    </div>
+                    <div class="club-name">
+            <span class="tooltip tooltip-effect-1" team='<?=$this->match->home?>'>
+              <span class="tooltip-item"><a href='<?=$this->tree?>club/<?=$this->match->home?>'><?=Team::getTeamNameByID($this->match->home)?></a><?if(PRO::is_pro($this->match->away)){?><img width='18px' src='<?=$this->tree;?>assets/img/icons/coin.png'> <small class='pro'>PRO</small><?}?></span>
+                <span class="tooltip-content clearfix">
+                    <span class="tooltip-text">Carregando...</span>
+                </span>
+            </span>
+                    </div>
+                </div>
+                <div class='result'><strong><?=$this->matchStats->home_goals?></strong>x<strong><?=$this->matchStats->away_goals?></strong></div>
+                <div class='club-info'>
+                    <div class='club-logo away'>
+                        <img src="<?=$this->tree?>assets/img/club_pics/default.png" alt="" width="150px">
+                    </div>
+                    <div class="club-name">
+            <span class="tooltip tooltip-effect-1" team='<?=$this->match->away?>'>
+              <span class="tooltip-item"><a href='<?=$this->tree?>club/<?=$this->match->away?>'><?=Team::getTeamNameByID($this->match->away)?></a><?if(PRO::is_pro($this->match->away)){?><img width='18px' src='<?=$this->tree;?>assets/img/icons/coin.png'> <small class='pro'>PRO</small><?}?></span>
+                <span class="tooltip-content clearfix">
+                    <span class="tooltip-text">Carregando...</span>
+                </span>
+            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class='box bit-1'>
+          <div class='box-title'>Estatísticas</div>
+          <div class="box-content"></div>
+        </div> -->
+        <div class='box bit-1'>
+            <div class='box-title'>Relatório</div>
+            <div class="box-content report">
+                <?php foreach ($this->report->report as $minute => $value){
+                    foreach ($value as $lance) {
+                        echo '<p><strong class="minute">'.$minute.'</strong> - '.$lance.'</p>';
+                    }
+                } ?>
+            </div>
+        </div>
+    </div>

@@ -22,7 +22,7 @@ class Team_Trophy
                     inner join trophy b on b.id = a.team
                     inner join team c on c.id = a.team
                     where trophy=:trophy
-                    
+                    order by a.trophy
         
         ");
         $getTrophy["trophy"] = $trophy;

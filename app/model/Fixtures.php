@@ -21,5 +21,14 @@
          return $expression->fetchAll();
      }
 
+     function getResults($home_goals, $away_goals) {
+         if ($home_goals > $away_goals) {
+             $result = -1; // home win
+         } else if ($home_goals < $away_goals) {
+             $result = 1; // away win
+         }
+         return (int) empty($result) ? 0 : $result; // empty = draw
+     }
+
 
 }
