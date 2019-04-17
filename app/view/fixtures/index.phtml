@@ -1,50 +1,71 @@
 
-<div class='content'>
+<form  method="post" action="<?php echo App::config("url") ?>fixtures/search">
+    Search: <input type="search" name="search" value="<?php echo $_POST["search"] ?>" />
 
-    <div class='byte'>
-        <div class='box bit-1'>
-            <div class='box-content results'>
-                <div class='club-info'>
-                    <div class='club-logo home'>
-                        <img src="<?=$this->tree?>assets/img/club_pics/default.png" alt="" width="150px">
-                    </div>
-                    <div class="club-name">
-            <span class="tooltip tooltip-effect-1" team='<?=$this->match->home?>'>
-              <span class="tooltip-item"><a href='<?=$this->tree?>club/<?=$this->match->home?>'><?=Team::getTeamNameByID($this->match->home)?></a><?if(PRO::is_pro($this->match->away)){?><img width='18px' src='<?=$this->tree;?>assets/img/icons/coin.png'> <small class='pro'>PRO</small><?}?></span>
-                <span class="tooltip-content clearfix">
-                    <span class="tooltip-text">Carregando...</span>
-                </span>
-            </span>
-                    </div>
-                </div>
-                <div class='result'><strong><?=$this->matchStats->home_goals?></strong>x<strong><?=$this->matchStats->away_goals?></strong></div>
-                <div class='club-info'>
-                    <div class='club-logo away'>
-                        <img src="<?=$this->tree?>assets/img/club_pics/default.png" alt="" width="150px">
-                    </div>
-                    <div class="club-name">
-            <span class="tooltip tooltip-effect-1" team='<?=$this->match->away?>'>
-              <span class="tooltip-item"><a href='<?=$this->tree?>club/<?=$this->match->away?>'><?=Team::getTeamNameByID($this->match->away)?></a><?if(PRO::is_pro($this->match->away)){?><img width='18px' src='<?=$this->tree;?>assets/img/icons/coin.png'> <small class='pro'>PRO</small><?}?></span>
-                <span class="tooltip-content clearfix">
-                    <span class="tooltip-text">Carregando...</span>
-                </span>
-            </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class='box bit-1'>
-          <div class='box-title'>Estatísticas</div>
-          <div class="box-content"></div>
-        </div> -->
-        <div class='box bit-1'>
-            <div class='box-title'>Relatório</div>
-            <div class="box-content report">
-                <?php foreach ($this->report->report as $minute => $value){
-                    foreach ($value as $lance) {
-                        echo '<p><strong class="minute">'.$minute.'</strong> - '.$lance.'</p>';
-                    }
-                } ?>
-            </div>
-        </div>
-    </div>
+
+    <input class="button" type="submit" value="Search" />
+
+</form>
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Date<th>
+        <th>Time</th>
+        <th>Home Team</th>
+        <th>Home Goals</th>
+        <th>Away Team</th>
+        <th>Away Goals</th>
+        <th>Referee</th>
+
+        <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+            <th>Edit / Delete</th>
+        <?php endif; ?>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($fixtures as $fixture): ?>
+        <tr>
+            <td><?php echo $fixture->f_date ?></td>
+            <td><?php echo $fixture->f_time ?></td>
+            <td><?php echo $fixture->home_team ?></td>
+            <td><?php echo $fixture->home_goals ?></td>
+            <td><?php echo $fixture->away_team ?></td>
+            <td><?php echo $fixture->away_goals ?></td>
+            <td><?php echo $fixture->referee ?></td>
+
+
+            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+
+                <td>
+                    <a href="<?php echo App::config("url") ?>fixtures/prepareedit/<?php echo $fixture->id ?>">
+                        <i class="fas fa-edit fa-2x"></i>
+                    </a>
+
+
+                    <a style="margin-left: 20px;"
+                       href="<?php echo App::config("url") ?>fixtures/delete/<?php echo $fixture->id ?>">
+                        <i class="fas fa-trash fa-2x"></i>
+                    </a>
+
+
+
+                </td>
+            <?php endif; ?>
+        </tr>
+
+
+    <?php endforeach;?>
+    <nav aria-label="Pagination">
+        <ul class="pagination text-center">
+            <li class="pagination-previous"><a href="<?php echo App::config("url") ?>fixtures/index/<?php echo $previous ?>" aria-label="Next page">Previous <span class="show-for-sr">page</span></a></li>
+            <li class="pagination-next"><a href="<?php echo App::config("url") ?>fixtures/index/<?php echo $next ?>" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+        </ul>
+    </nav>
+    </tbody>
+
+
+
+</table>

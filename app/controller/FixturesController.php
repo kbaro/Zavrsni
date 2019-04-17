@@ -2,12 +2,29 @@
 
 class FixturesController extends ProtectedController{
 
-    function index(){
+    function index($page = 1)
+    {
+
+        if ($page <= 0) {
+            $page = 1;
+        }
+        if ($page === 1) {
+            $previous = 1;
+        }
+        if ($page > 5){
+            $page = 1;
+        } else {
+            $previous = $page - 1;
+        }
+        $next = $page + 1;
+
         $view = new View();
         $view->render(
             'fixtures/index',
             [
-                "fixtures"=>Fixtures::read()
+                "fixtures"=>Fixtures::read($page),
+                "previous" => $previous,
+                "next" => $next
             ]
         );
     }

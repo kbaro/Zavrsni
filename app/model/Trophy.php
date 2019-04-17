@@ -30,7 +30,7 @@ class Trophy
     public static function add()
     {
         $db = Db::getInstance();
-        $expression = $db->prepare("insert into trophy (trophy_name,photo) 
+        $expression = $db->prepare("insert into trophy(trophy_name,photo) 
         values (:trophy_name,:photo");
         $expression->execute(self::data());
     }
