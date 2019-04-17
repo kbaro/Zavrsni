@@ -646,67 +646,6 @@ INSERT INTO fixtures (f_date, f_time, home_team, home_goals, away_team, away_goa
 INSERT INTO fixtures (f_date, f_time, home_team, home_goals, away_team, away_goals, referee) VALUES (ADDDATE(CURDATE(), 217), 1600, 15, null, 7, null, 30);
 
 
-/*team insert*/
-
-insert into team (id,title,manager,ground,ground_capacity,since,logo,city) values
-(null,'Arsenal',1,'Emirates Stadium',40000,1904,'/zavrsni/public/img/arsenal.png','London'),
-
-(null,'AFC Bournemouth',2,'Vitality Stadium',25000,1914,'/zavrsni/public/img/bournemouth.png','Bournemouth'),
-
-(null,'Brighton and Hove Albion',3,'Amex Stadium',30000,1920,'/zavrsni/public/img/brighton.png','Brighton'),
-
-(null,'Burnley',4,'Turf Moor',35000,1900,'/zavrsni/public/img/burnley.png','Burnley'),
-
-(null,'Cardiff City',5,'Cardiff City Stadium',15000,1915,'/zavrsni/public/img/cardiff.png','Cardiff'),
-
-(null,'Chelsea',6,'Stamford Bridge',50000,1905,'/zavrsni/public/img/chelsea.png','London'),
-
-(null,'Crystal Palace',7,'Selhurst Park',25000,1925,'/zavrsni/public/img/palace.png','London'),
-
-(null,'Everton',8,'Goodison Park',45000,1902,'/zavrsni/public/img/everton.png','Liverpool'),
-
-(null,'Fulham',9,'Craven Cottage',20000,1925,'/zavrsni/public/img/fulham.png','London'),
-
-(null,'Huddersfield Town',10,'John Smiths Stadium',18000,1930,'/zavrsni/public/img/hudder.png','Huddersfield'),
-
-(null,'Leicester City',11,'King Power Stadium',32000,1943,'/zavrsni/public/img/leicester.png','Leicester'),
-
-(null,'Liverpool',12,'Anfield',50000,1904,'/zavrsni/public/img/liverpool.png','Liverpool'),
-
-(null,'Manchester City',13,'Etihad Stadium',60000,2000,'/zavrsni/public/img/city.png','Manchester'),
-
-(null,'Manchester United',14,'Old Trafford',75000,1900,'/zavrsni/public/img/united.png','Manchester'),
-
-(null,'Newcastle United',15,'St.James Park',35000,1950,'/zavrsni/public/img/newcastle.png','Newcastle upon Tyne'),
-
-(null,'Southampton',16,'St. Marys Stadium',20000,1960,'/zavrsni/public/img/soton.png','Southampton'),
-
-(null,'Tottenham Hotspur',17,'Tottenham Hotspur Stadium',85000,1900,'/zavrsni/public/img/spurs.png','London'),
-
-(null,'Watford',18,'Vicarage Road',22000,1940,'/zavrsni/public/img/watford.png','Watford'),
-
-(null,'West Ham United',19,'London Stadium',40500,1920,'/zavrsni/public/img/westham.png','London'),
-
-(null,'Wolverhampton Wanderers',20,'Molineux Stadium',40000,1970,'/zavrsni/public/img/wolfs.png','Wolverhampton')
-;
-
-/* team_trophy insert */
-
-insert into team_trophy(id,year_won,team,trophy,times_won)values
-(null ,1995 ,2,1,20),
-(null,1996 , 2,1,15),
-(null,1997 , 2,1,15),
-(null,1998 , 2,2,15),
-(null,1999 , 2,2,15),
-(null,2000 ,1,2,7),
-(null,2017,6,3,6),
-(null,2018,2,2,17),
-(null,2017,3,2,6),
-(null,2018,4,2,17),
-(null,2001 ,5,2,7),
-(null ,2015 ,1,3,20),
-(null,2016 , 2,3,15),
-(null,2019 ,5,3,7);
 
 
 
