@@ -19,7 +19,6 @@
         <th>Away Team</th>
         <th>Away Goals</th>
         <th>Referee</th>
-
         <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
             <th>Edit / Delete</th>
         <?php endif; ?>
@@ -31,9 +30,9 @@
             <td><?php echo $fixture->f_date ?></td>
             <td><?php echo $fixture->f_time ?></td>
             <td><?php echo $fixture->home_team ?></td>
-            <td><?php echo $fixture->home_goals ?></td>
+            <td><?php echo $fixture->home_goals_for ?></td>
             <td><?php echo $fixture->away_team ?></td>
-            <td><?php echo $fixture->away_goals ?></td>
+            <td><?php echo $fixture->away_goals_for ?></td>
             <td><?php echo $fixture->referee ?></td>
 
 

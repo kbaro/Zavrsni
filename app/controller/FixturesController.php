@@ -13,7 +13,7 @@ class FixturesController extends ProtectedController{
         if ($page === 1) {
             $previous = 1;
         }
-        if ($page > 5){
+        if ($page > 100){
             $page = 1;
         } else {
             $previous = $page - 1;
