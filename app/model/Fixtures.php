@@ -9,26 +9,28 @@
          $expression = $db->prepare("
             
                                 select
-                                id,
-                                f_date,
-                                f_time,
-                                home_team,
-                                home_goals as home_goals_for,
+                                a.id,
+                                a.f_date,
+                                a.f_time,
+                                a.home_team,
+                                a.home_goals as home_goals_for,
                                        case 
                                          when home_goals > away_goals then 3
                                          when away_goals > home_goals then 0
                                          else 1
                                             end as home_points,
-                                away_team,
-                                away_goals as away_goals_for,
+                                a.away_team,
+                                a.away_goals as away_goals_for,
                                        case 
                                          when away_goals > home_goals then 3
                                          when home_goals > away_goals then 0
                                          else 1
                                             end as away_points,
-                                referee,
-                                player
-                                from fixtures   
+                                a..referee as referee_name,
+                                b.player as name
+                                from fixtures a  
+                                left join referee a on a.id = a.fixtures
+                                left join player b on b.id = a.player
                                   order by f_date
                           limit ". (($page*$perPage)- $perPage)  . ",$perPage
             ");

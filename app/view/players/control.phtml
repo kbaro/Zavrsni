@@ -3,7 +3,8 @@ $head = "<link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.12.1/themes/base
 
 $js="
  <script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
- <script src=\"" . APP::config("url") . "public/js/countrylist.js\"></script>";
+ <script src=\"" . APP::config("url") . "public/js/countrylist.js\"></script>"
+;
 ?>
 
 
@@ -52,7 +53,7 @@ $js="
 <select name="team" id="team">
     <option value="0">Choose</option>
 
-    <?php foreach(Team::read() as $team): ?>
+    <?php foreach(Team::readAll() as $team): ?>
 
         <option
 

@@ -2,6 +2,8 @@
 
 class FixturesController extends ProtectedController{
 
+
+
     function index($page = 1)
     {
 

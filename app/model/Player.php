@@ -41,6 +41,7 @@ class Player
         return $expression->fetchAll();
     }
 
+
     public static function search()
     {
         $db=Db::getInstance();
