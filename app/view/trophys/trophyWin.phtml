@@ -1,35 +1,41 @@
+<table>
+    <?php foreach($trophys as $trophy): ?>
+        <?php foreach ($trophyWin as $tt): ?>
+            <?php if($trophy->id === $tt ->trophy): ?>
 
 
-    <?php if($trophy->id ==="1"): ?>
-        <img style="width: 200px; height: 200px; float: right" alt="" src="<?php echo $trophy->photo ?>">
-        <h4><a href="<?= App::config("url")?>team_trophy/republicLeague"> <?= $trophy->trophy_name ?></a></h4>
+                <img style="width: 200px; height: 200px; float: left" alt="" src="<?=$trophy->photo ?>">
+                <h4> <?= $trophy->trophy_name;break ?></h4>
 
 
-    <?php endif; ?>
 
+
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+    <thead>
+    <tr>
+
+        <th>Team</th>
+        <th>Years won</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
 
 
     <?php foreach($trophys as $trophy): ?>
 
-        <table>
+        <?php foreach ($trophyWin as $tt): ?>
+            <?php if($trophy->id === $tt ->trophy): ?>
 
-            <thead>
-            <tr>
-
-                <th>Team</th>
-                <th>year won</th>
-                <th>Times won</th>
-
-            </tr>
-            </thead>
-            <tbody>
-    <?php foreach ($trophyWin as $tt): ?>
-        <?php if($trophy->id === $tt ->trophy): ?>
 
 
                 <tr>
 
                     <td>
+
                         <?= $tt ->title ?>
 
                     </td>
@@ -38,17 +44,15 @@
                         <?= $tt ->year_won ?>
                     </td>
 
-                    <td>
-                        <?= $tt ->times_won ?>
-                    </td>
+
 
                 </tr>
             <?php endif; ?>
+
         <?php endforeach; ?>
-            </tbody>
-
-
-        </table>
-
 
     <?php endforeach; ?>
+    </tbody>
+
+
+</table>

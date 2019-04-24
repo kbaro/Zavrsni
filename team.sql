@@ -36,8 +36,7 @@ create table team_trophy(
   id        int primary key auto_increment not null,
 	year_won int,
 	team      int,
-	trophy    int,
-	times_won int
+	trophy    int
 );
 
 create table manager(
@@ -72,7 +71,7 @@ create table fixtures(
 create table league_table(
   id int primary key auto_increment not null,
   fixtures int,
-  team int,
+  team int
 );
 
 create table fixtures_player(
@@ -168,7 +167,7 @@ insert into manager(id,name,surname) values
 insert into trophy (id,trophy_name,photo) values
 (null,'Republic League','/zavrsni/public/img/league.png'),
 (null,'Republic Cup','/zavrsni/public/img/cup.png'),
-(null,'Republic SuperCup','/zavrsni/public/img/supercup.jpg')
+(null,'Republic SuperCup','/zavrsni/public/img/supercup.png')
 ;
 
 /*referee insert*/
@@ -251,21 +250,102 @@ insert into team (id,title,manager,ground,ground_capacity,since,logo,city) value
 
 /* team_trophy insert */
 
-insert into team_trophy(id,year_won,team,trophy,times_won)values
-(null ,1995 ,2,1,20),
-(null,1996 , 2,1,15),
-(null,1997 , 2,1,15),
-(null,1998 , 2,2,15),
-(null,1999 , 2,2,15),
-(null,2000 ,1,2,7),
-(null,2017,6,3,6),
-(null,2018,2,2,17),
-(null,2017,3,2,6),
-(null,2018,4,2,17),
-(null,2001 ,5,2,7),
-(null ,2015 ,1,3,20),
-(null,2016 , 2,3,15),
-(null,2019 ,5,3,7);
+insert into team_trophy(id,year_won,team,trophy)values
+(null,1991 , 1,1),
+(null ,1992,2,1),
+(null,1993, 3,1),
+(null,1994 , 4,1),
+(null ,1995 ,5,1),
+(null,1996 , 6,1),
+(null,1997 , 7,1),
+(null ,1998 ,8,1),
+(null,1999 , 9,1),
+(null,2000 , 10,1),
+(null ,2001 ,11,1),
+(null,2002 , 12,1),
+(null,2003 , 13,1),
+(null ,2004 ,14,1),
+(null,2005 , 15,1),
+(null,2006 , 16,1),
+(null ,2007 ,17,1),
+(null,2008 , 18,1),
+(null,2009 , 19,1),
+(null,2010 , 20,1),
+(null ,2011 ,11,1),
+(null,2012 , 12,1),
+(null,2013 , 13,1),
+(null ,2014 ,14,1),
+(null,2015 , 15,1),
+(null,2016 , 16,1),
+(null ,2017 ,17,1),
+(null,2018 , 18,1),
+(null,2019 , 19,1),
+
+
+(null,1980 , 1,2),
+(null,1981 , 5,2),
+(null,1982 ,6,2),
+(null,1983,2,2),
+(null,1984,3,2),
+(null,1985,4,2),
+(null,1986 , 2,2),
+(null,1987 , 2,2),
+(null,1988 ,1,2),
+(null,1989,2,2),
+(null,1990,3,2),
+(null,1991,4,2),
+(null,1992 ,5,2),
+(null,1993,2,2),
+(null,1994,3,2),
+(null,1995,4,2),
+(null,1996 ,5,2),
+(null,1997,2,2),
+(null,1998,3,2),
+(null,1999,4,2),
+(null,2001 ,5,2),
+(null,2002,2,2),
+(null,2003,3,2),
+(null,2004,4,2),
+(null,2005 ,5,2),
+(null,2006,2,2),
+(null,2007,3,2),
+(null,2008,4,2),
+(null,2009 ,5,2),
+(null,2010,2,2),
+(null,2011,3,2),
+(null,2012,4,2),
+(null,2013 ,5,2),
+(null,2014,3,2),
+(null,2015,4,2),
+(null,2016 ,5,2),
+(null,2017,3,2),
+(null,2018,4,2),
+(null,2019 ,5,2),
+
+
+
+(null,2000,6,3),
+(null,2001 ,5,2),
+(null ,2002 ,1,3),
+(null,2003, 2,3),
+(null,2004 ,5,3),
+(null,2005,6,3),
+(null ,2006 ,1,3),
+(null,2007, 2,3),
+(null,2008 ,5,3),
+(null,2009,6,3),
+(null,2010 ,5,2),
+(null ,2011 ,1,3),
+(null,2012 , 2,3),
+(null,2013 ,5,3),
+(null,2014,6,3),
+(null ,2015 ,1,3),
+(null,2016 , 2,3),
+(null,2017,6,3),
+(null ,2018 ,1,3),
+(null,2019 ,5,3)
+;
+
 
 
 /*fixtures insert */
