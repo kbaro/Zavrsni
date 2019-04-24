@@ -69,6 +69,12 @@ create table fixtures(
   player int
 );
 
+create table league_table(
+  id int primary key auto_increment not null,
+  fixtures int,
+  team int,
+);
+
 create table fixtures_player(
   id int primary key auto_increment not null,
   fixtures int,

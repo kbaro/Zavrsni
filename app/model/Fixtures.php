@@ -7,10 +7,8 @@
          $perPage=10;
          $db = Db::getInstance();
          $expression = $db->prepare("
-            
-                                 select
+            select
                                 a.id,
-                                d.id,
                                 DATE_FORMAT(f_date, '%e.%m.%Y') as f_date,
                                 TIME_FORMAT(f_time, '%i:%H') as f_time,
                                 d.title as home_team,
@@ -20,7 +18,7 @@
                                          when away_goals > home_goals then 0
                                          else 1
                                             end as home_points,
-                                d.title as away_team,
+                                e.title as away_team,
                                 a.away_goals as away_goals_for,
                                        case 
                                          when away_goals > home_goals then 3
@@ -32,7 +30,8 @@
                                 from fixtures a
                                 left join referee as b on b.id = a.referee
                                 left join player as c on c.id = a.player
-                                left join team as d on d.id = d.title
+                                left join team as d on d.id = a.home_team
+                                left join team as e on e.id = a.away_team
                               
                                   order by a.f_date
                           limit ". (($page*$perPage)- $perPage)  . ",$perPage
