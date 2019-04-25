@@ -49,5 +49,40 @@
          return (int) empty($result) ? 0 : $result; // empty = draw
      }
 
+     public static function find($id)
+     {
+         $db = Db::getInstance();
+         $expression = $db->prepare("select * from fixtures where id=:id");
+         $expression->execute(["id"=>$id]);
+         return $expression->fetch();
+     }
 
-}
+
+     public static function add()
+     {
+         $db = Db::getInstance();
+         $expression = $db->prepare("insert into fixtures (home_goals,away_goals) 
+        values (:home_goals,:away_goals)");
+         $expression->execute(self::data());
+     }
+
+     public static function update($id)
+     {
+         $db = Db::getInstance();
+         $expression = $db->prepare("update fixtures set 
+        home_goals=:home_goals,
+        away_goals=:away_goals
+        where id=:id");
+         $data = self::data();
+         $data["id"]=$id;
+         $expression->execute($data);
+     }
+
+     private static function data(){
+         return [
+             "home_goals"=>Request::post("home_goals"),
+             "away_goals"=>Request::post("away_goals")
+         ];
+     }
+
+ }

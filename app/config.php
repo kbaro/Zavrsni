@@ -2,7 +2,7 @@
 
 return [
     "url"=>"http://localhost/zavrsni/",
-    "path"=>"C:/xampp/htdocs/localhost/zavrsni/",
+    "path"=>"C:/xampp/htdocs/zavrsni/",
     "dev"=>true,
     "AppName" => "Football League",
     "db"=> [

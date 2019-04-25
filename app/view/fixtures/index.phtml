@@ -20,7 +20,7 @@
         <th>Away Goals</th>
         <th>Referee</th>
         <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
-            <th>Edit / Delete</th>
+            <th>Insert Score</th>
         <?php endif; ?>
     </tr>
     </thead>
@@ -42,13 +42,6 @@
                     <a href="<?php echo App::config("url") ?>fixtures/prepareedit/<?php echo $fixture->id ?>">
                         <i class="fas fa-edit fa-2x"></i>
                     </a>
-
-
-                    <a style="margin-left: 20px;"
-                       href="<?php echo App::config("url") ?>fixtures/delete/<?php echo $fixture->id ?>">
-                        <i class="fas fa-trash fa-2x"></i>
-                    </a>
-
 
 
                 </td>

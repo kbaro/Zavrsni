@@ -20,7 +20,7 @@ $("#save").click(function () {
         data:"picture=" + result.toDataURL(),
         success:function (backFromServer) {
             if(backFromServer==="Ok"){
-                $("#p_"+idOperator).attr("src",result.toDataURL());
+                $("#operator_"+idOperator).attr("src",result.toDataURL());
                 $("#pictureModal").foundation("close");
             }else{
                 alert(backFromServer);
