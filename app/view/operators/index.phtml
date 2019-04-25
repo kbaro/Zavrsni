@@ -1,7 +1,29 @@
+<?php
+$head = "<link rel=\"stylesheet\" href=\"" . APP::config("url") . "public/css/cropper.css\">";
+
+$js="
+  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js\"></script>
+  <script src=\"https://fengyuanchen.github.io/js/common.js\"></script>
+  <script src=\"" . APP::config("url") . "public/js/cropper.js\"></script>
+  <script>let path=\"" . APP::config("url") .  "\";</script>
+ <script src=\"" . APP::config("url") . "public/js/operators/index.js\"></script>
+ 
+ ";
+?>
+
 <div class="grid-x">
     <?php foreach($operators as $operator): ?>
     <div class="cell large-3">
         <div class="success callout operators">
+
+            <img id="operator_<?php echo $operator->id; ?>" class="picture" src="<?php
+
+            $path = file_exists(App::config("path") . "public/img/operators/" . $operator->id . ".png")
+                ?  App::config("url") . "public/img/operators/" . $operator->id . ".png"
+                : App::config("url") . "public/img/unknown.png";
+
+            echo $path ?>" alt="" />
+
             <h1><?php echo $operator->name?>
     <br />
     <?php echo $operator->surname?>
@@ -12,6 +34,16 @@
     </div>
 
     <?php endforeach; ?>
+</div>
+
+<div class="reveal" id="pictureModal" data-reveal>
+    <img id="image" src="" alt="" />
+    <input type="file" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+    <a href="#" id="save">Save</a>
+
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 
 <iframe id="sofa-standings-embed-1-17359" width="100%" height="726px" style="height:726px!important" src="https://www.sofascore.com/hr/turnir/1/17359/tablica/tablice/ugradi" frameborder="0" scrolling="no"></iframe><div style="font-size:12px;font-family:Arial,sans-serif"><a target="_blank" href="https://www.sofascore.com/hr/">Rezultati</a> by SofaScore</div><script type="text/javascript" src="https://www.sofascore.com/bundles/sofascoreweb/js/bin/util/embed.min.js"></script><script type="text/javascript">sofa_embed('sofa-standings-embed-1-17359', window);</script>

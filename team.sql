@@ -159,7 +159,12 @@ insert into manager(id,name,surname) values
 (null,'Mauricio','Pochettino'),
 (null,'Javi','Gracia'),
 (null,'Manuel','Pellegrini'),
-(null,'Nuno','Espirito Santo')
+(null,'Nuno','Espirito Santo'),
+(null,'Random','Manager'),
+(null,'Darko','Klisurić'),
+(null,'Matej','Sokol'),
+(null,'Tomislav','Jakopec'),
+(null,'Jose','Mourinho')
 ;
 
 /*trophy insert*/
