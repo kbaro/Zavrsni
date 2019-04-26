@@ -25,11 +25,9 @@
                                          when home_goals > away_goals then 0
                                          else 1
                                             end as away_points,
-                                b.referee_name as referee,
-                                c.name as player
+                                b.referee_name as referee
                                 from fixtures a
                                 left join referee as b on b.id = a.referee
-                                left join player as c on c.id = a.player
                                 left join team as d on d.id = a.home_team
                                 left join team as e on e.id = a.away_team
                               

@@ -64,8 +64,7 @@ create table fixtures(
   home_goals int,
   away_team int,
   away_goals int,
-  referee int,
-  player int
+  referee int
 );
 
 create table league_table(
@@ -78,20 +77,6 @@ create table league_table(
   points int
 );
 
-create table fixtures_player(
-  id int primary key auto_increment not null,
-  fixtures int,
-  team int,
-  player int
-);
-
-create table goalscorer(
-  id int primary key auto_increment not null,
-  fixtures int,
-  player int,
-  team int
-);
-
 
 alter table player add foreign key (team) references team(id);
 alter table player add foreign key (positions) references positions(id);
@@ -101,12 +86,6 @@ alter table team_trophy add foreign key (team) references team(id);
 alter table fixtures add foreign key (home_team) references team(id);
 alter table fixtures add foreign key (away_team) references team(id);
 alter table fixtures add foreign key (referee) references referee(id);
-alter table fixtures_player add foreign key (fixtures) references fixtures(id);
-alter table fixtures_player add foreign key (team) references team(id);
-alter table fixtures_player add foreign key (player) references player(id);
-alter table goalscorer add foreign key (fixtures) references fixtures(id);
-alter table goalscorer add foreign key (player) references player(id);
-alter table goalscorer add foreign key (team) references team(id);
 alter table league_table add foreign key (fixtures) references fixtures(id);
 alter table league_table add foreign key (team) references team(id);
 
