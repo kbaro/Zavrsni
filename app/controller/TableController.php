@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kristijan
- * Date: 8.4.2019.
- * Time: 14:17
- */
+
+class TableController extends ProtectedController
+{
+
+    public function index()
+    {
+        $view = new View;
+        $view->render("table/index", ["table" => Table::read()]);
+    }
+
+
+}

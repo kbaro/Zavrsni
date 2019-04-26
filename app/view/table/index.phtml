@@ -1,0 +1,29 @@
+<table>
+    <thead>
+    <tr>
+        <th>Team</th>
+        <th>Wins</th>
+        <th>Draws</th>
+        <th>Losses</th>
+        <th>Points</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($table as $table): ?>
+        <tr>
+            <td><?php echo $table->title ?></td>
+            <td><?php echo $table->wins ?></td>
+            <td><?php echo $table->draws ?></td>
+            <td><?php echo $table->losses ?></td>
+            <td><?php echo $table->points ?></td>
+
+
+
+    <?php endforeach;?>
+
+    </tbody>
+
+
+
+</table>
