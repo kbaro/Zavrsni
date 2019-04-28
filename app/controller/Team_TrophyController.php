@@ -1,6 +1,6 @@
 <?php
 
-class Team_TrophyController extends ProtectedController{
+class Team_trophyController extends ProtectedController{
 
 
 
