@@ -47,6 +47,29 @@
          return (int) empty($result) ? 0 : $result; // empty = draw
      }
 
+     public static function search()
+     {
+         $db=Db::getInstance();
+         if (isset($_POST['search'])){
+             $searchq = $_POST['search'];
+             $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+
+             $expression = $db->prepare("select * from fixtures where
+             f_date like '%$searchq%'
+             or home_team like '%$searchq%'
+             or away_team like '%$searchq%'")
+             or die("Could not search");
+             $expression->execute();
+             $count = $expression->rowCount();
+             if ($count == 0){
+                 return "There was no results!";
+             }else{
+                 return $expression->fetchAll();
+             }
+         }
+
+     }
+
      public static function find($id)
      {
          $db = Db::getInstance();

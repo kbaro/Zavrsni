@@ -75,6 +75,14 @@ class FixturesController extends ProtectedController{
         );
     }
 
+
+    function search()
+    {
+        $view = new View();
+        $view->render('fixtures/index' , ["fixtures" => Fixtures::search()]);
+
+    }
+
     function prepareedit($id)
     {
         $view = new View();

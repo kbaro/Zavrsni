@@ -16,6 +16,7 @@
     <tr>
 
         <th>Team</th>
+        <th></th>
         <th>Years won</th>
 
 
@@ -33,13 +34,17 @@
 
                 <tr>
 
-                    <td>
-                        <?= $tt ->title ?>
-                        <?= $tt ->logo ?>
 
+                    <td style="font-size: 35px;">
+                        <?= $tt ->title ?>
                     </td>
 
                     <td>
+                         <img style="width: 100px; height: 100px;" alt="" src="<?php echo $tt->logo ?>">
+                    </td>
+
+
+                    <td style="font-size: 35px;">
                         <?= $tt ->year_won ?>
                     </td>
 
