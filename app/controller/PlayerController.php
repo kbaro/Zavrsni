@@ -21,6 +21,16 @@ class PlayerController extends ProtectedController
 
     }
 
+    public function saveImage($id)
+    {
+        $img = Request::post("picture");
+        $img = str_replace('data:image/png;base64,', '', $img);
+        $img = str_replace(' ', '+', $img);
+        $data = base64_decode($img);
+        file_put_contents(App::config("path") . "public/img/players/" . $id . ".png",$data);
+        echo "Ok";
+    }
+
 
     function edit($id)
     {
@@ -101,7 +111,6 @@ class PlayerController extends ProtectedController
         $_POST["nationality"] = $player->nationality;
         $_POST["positions"] = $player->positions;
         $_POST["salary"] = $player->salary;
-        $_FILES["photo"] = $player->photo;
         $_POST["team"] = $player->team;
         $_POST["id"] = $player->id;
 

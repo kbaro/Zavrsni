@@ -1,3 +1,16 @@
+<?php
+$head = "<link rel=\"stylesheet\" href=\"" . APP::config("url") . "public/css/cropper.css\">";
+
+$js="
+  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js\"></script>
+  <script src=\"https://fengyuanchen.github.io/js/common.js\"></script>
+  <script src=\"" . APP::config("url") . "public/js/cropper.js\"></script>
+  <script>let path=\"" . APP::config("url") .  "\";</script>
+ <script src=\"" . APP::config("url") . "public/js/players/index.js\"></script>
+ 
+ ";
+?>
+
 <a href="<?php echo App::config("url") ?>player/prepareadd" class="success button expanded">
    ADD NEW PLAYER
 </a>
@@ -16,12 +29,12 @@
 <table>
     <thead>
     <tr>
+        <th>Photo</th>
         <th>Name</th>
         <th>Surname</th>
         <th>Nationality</th>
         <th>Position</th>
         <th>Salary</th>
-        <th>Photo</th>
         <th>Team</th>
         <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
         <th>Edit / Delete</th>
@@ -31,12 +44,20 @@
     <tbody>
     <?php foreach($players as $player): ?>
         <tr>
+            <td>
+            <img style="height: 100px; width: 100px;" id="player_<?php echo $player->id; ?>" class="picture" src="<?php
+
+            $path = file_exists(App::config("path") . "public/img/players/" . $player->id . ".png")
+                ?  App::config("url") . "public/img/players/" . $player->id . ".png"
+                : App::config("url") . "public/img/unknown.png";
+
+            echo $path ?>" alt="" />
+            </td>
             <td><?php echo $player->name ?></td>
             <td><?php echo $player->surname ?></td>
             <td><?php echo $player->nationality ?></td>
             <td><?php echo $player->positions ?></td>
             <td><?php echo $player->salary ?></td>
-            <td><img  alt="" src="<?php echo $player->photo ?>"></td>
             <td><?php echo $player->title ?></td>
 
             <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
@@ -68,6 +89,14 @@
     </nav>
     </tbody>
 
+    <div class="reveal" id="pictureModal" data-reveal>
+        <img id="image" src="" alt="" />
+        <input type="file" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+        <a href="#" id="save">Save</a>
 
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
 </table>
