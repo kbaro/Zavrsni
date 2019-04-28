@@ -3,10 +3,9 @@
         <?php foreach ($trophyWin as $tt): ?>
             <?php if($trophy->id === $tt ->trophy): ?>
 
-
+                <hr style="border-bottom: 2px solid #aba6bf;" />
                 <img style="width: 200px; height: 200px; float: right" alt="" src="<?=$trophy->photo ?>">
-                <h1> <?= $trophy->trophy_name;break ?></h1>
-
+                <h2 style="margin-top: 50px; margin-bottom: 50px; color: #38003c;"> <?= $trophy->trophy_name;break ?></h2>
 
 
 
@@ -35,8 +34,8 @@
                 <tr>
 
                     <td>
-
                         <?= $tt ->title ?>
+                        <?= $tt ->logo ?>
 
                     </td>
 

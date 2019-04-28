@@ -16,7 +16,8 @@ class Team_Trophy
                     b.id,
                     b.trophy_name,
                     b.photo,
-                    c.title
+                    c.title,
+                    c.logo
                     from team_trophy as a
                     inner join trophy b on b.id = a.trophy
                     inner join team c on c.id = a.team
