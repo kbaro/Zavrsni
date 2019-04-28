@@ -1,0 +1,31 @@
+<label>Name
+    <input type="text" name="name"
+           value="<?php echo Request::post("name") ?>" />
+</label>
+<label>Surname
+    <input type="text" name="surname"
+           value="<?php echo Request::post("surname") ?>" />
+</label>
+
+<label for="favorite_team">Favorite team</label>
+<select name="favorite_team" id="favorite_team">
+    <option value="0">Choose</option>
+
+    <?php foreach(Operator::read() as $operator): ?>
+
+        <option
+
+            <?php if(Request::post("manager") == $operator->id):?>
+                selected="selected"
+            <?php endif;?>
+
+                value="<?php echo $operator->id ?>"><?php echo $operator->favorite_team ?></option>
+
+    <?php endforeach; ?>
+
+</select>
+<label>E-mail
+    <input type="email" name="email"
+           value="<?php echo Request::post("email") ?>" />
+</label>
+

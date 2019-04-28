@@ -25,8 +25,8 @@ class AdminController{
 
                 // $view->render('index',["message"=>"Welcome"]);
 
-                $tc = new TeamController();
-                $tc->index();
+                $pr = new OperatorController();
+                $pr->index();
 
             }else{
                 $view->render('signin',["message"=>"Email or password do not match"]);

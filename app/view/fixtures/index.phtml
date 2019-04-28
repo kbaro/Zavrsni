@@ -19,9 +19,9 @@
         <th>Away Team</th>
         <th>Away Goals</th>
         <th>Referee</th>
-        <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+
             <th>Insert Score</th>
-        <?php endif; ?>
+
     </tr>
     </thead>
     <tbody>
@@ -36,7 +36,7 @@
             <td><?php echo $fixture->referee ?></td>
 
 
-            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+
 
                 <td>
                     <a href="<?php echo App::config("url") ?>fixtures/prepareedit/<?php echo $fixture->id ?>">
@@ -45,7 +45,7 @@
 
 
                 </td>
-            <?php endif; ?>
+
         </tr>
 
 

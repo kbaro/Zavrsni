@@ -36,21 +36,23 @@
             <td><?php echo $team->since ?></td>
             <td><?php echo $team->city ?></td>
 
-            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+
             <td> 
                 <a href="<?php echo App::config("url") ?>team/prepareedit/<?php echo $team->id ?>">
                     <i class="fas fa-edit fa-2x"></i>
                 </a>
 
+                <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
                 <?php if($team->total==0): ?>
                     <a style="margin-left: 10px"
                      href="<?php echo App::config("url") ?>team/delete/<?php echo $team->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
                 <?php endif; ?>
-            
+
+                <?php endif; ?>
              </td>
-            <?php endif; ?>
+
         </tr>
         <?php endforeach;?>
         <nav aria-label="Pagination">

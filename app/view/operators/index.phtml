@@ -29,13 +29,26 @@ $js="
     <?php echo $operator->surname?>
     </h1>
 
+            <?php echo $operator->favorite_team?>
+
     <?php echo $operator->email?>
             <hr />
-    
+
             <h4 style="text-transform: uppercase;">
             <?php echo $operator->role?>
             </h4>
 
+                <a href="<?php echo App::config("url") ?>operator/prepareedit/<?php echo $operator->id ?>">
+                    <i class="fas fa-edit fa-2x"></i>
+                </a>
+
+
+            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+                <a style="margin-left: 20px;"
+                   href="<?php echo App::config("url") ?>operator/delete/<?php echo $operator->id ?>">
+                    <i class="fas fa-trash fa-2x"></i>
+                </a>
+            <?php endif; ?>
     </div>
     </div>
 

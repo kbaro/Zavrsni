@@ -76,6 +76,18 @@ create table league_table(
   points int
 );
 
+/*operator insert*/
+
+create table operator(
+id int not null primary key auto_increment,
+name varchar(255) not null,
+surname varchar(255) not null,
+role enum ('admin' , 'user') default 'user',
+favorite_team int,
+email varchar(255) not null,
+password char(60) not null
+);
+
 
 alter table player add foreign key (team) references team(id);
 alter table player add foreign key (positions) references positions(id);
@@ -87,22 +99,13 @@ alter table fixtures add foreign key (away_team) references team(id);
 alter table fixtures add foreign key (referee) references referee(id);
 alter table league_table add foreign key (fixtures) references fixtures(id);
 alter table league_table add foreign key (team) references team(id);
+alter table operator add foreign key (favorite_team) references team(id);
 
 
 
-/*operator insert*/
 
-create table operator(
-	id int not null primary key auto_increment,
-	name varchar(255) not null,
-	surname varchar(255) not null,
-	role enum ('admin' , 'user') default 'user',
-	email varchar(255) not null,
-	password char(60) not null
-);
-
-insert into operator(id,name,surname,role,email,password) values
-(null,'Kristijan','Baro','admin','baro.kristijan@gmail.com','$2y$10$ZHXft4hWvvgl8HIzHc4FEemQKLr0ZAj4DX3r0kBTi4e.e67woaoQS')
+insert into operator(id,name,surname,role,favorite_team,email,password) values
+(null,'Kristijan','Baro','admin',null,'baro.kristijan@gmail.com','$2y$10$ZHXft4hWvvgl8HIzHc4FEemQKLr0ZAj4DX3r0kBTi4e.e67woaoQS')
 ;
 
 /*position insert */

@@ -60,23 +60,24 @@ $js="
             <td><?php echo $player->salary ?></td>
             <td><?php echo $player->title ?></td>
 
-            <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
+
 
             <td>
                 <a href="<?php echo App::config("url") ?>player/prepareedit/<?php echo $player->id ?>">
                     <i class="fas fa-edit fa-2x"></i>
                 </a>
 
-
+                <?php if(Session::getInstance()->getUser()->role==="admin"): ?>
                     <a style="margin-left: 20px;"
+
                      href="<?php echo App::config("url") ?>player/delete/<?php echo $player->id ?>">
                         <i class="fas fa-trash fa-2x"></i>
                     </a>
 
-
+                <?php endif; ?>
 
             </td>
-            <?php endif; ?>
+
         </tr>
 
 
