@@ -7,7 +7,7 @@ class OperatorController extends ProtectedController{
         $view->render(
             'operators/index',
             [
-            "operators"=>Operator::read()
+            "operators"=>Operator::readAll()
             ]
         );
     }
@@ -39,6 +39,29 @@ class OperatorController extends ProtectedController{
             );
         }
 
+    }
+
+    function control()
+    {
+        if(Request::post("name")===""){
+            return "Name required";
+        }
+
+        if(Request::post("surname")===""){
+            return "Surname required";
+        }
+
+        if(Request::post("favorite_team")===""){
+            return "Choose your favorite team.";
+        }
+
+        if(Request::post("email")===""){
+            return "E-mail required.";
+        }
+
+
+
+        return true;
     }
 
     function delete($id)

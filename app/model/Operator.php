@@ -4,6 +4,26 @@ class Operator{
 
     public static function read(){
         $db = Db::getInstance();
+        $expression = $db->prepare("select id,
+                                                    name,
+                                                    surname,
+                                                    favorite_team,
+                                                    email,
+                                                    role
+                                                   
+                                    
+                                                    from operator
+                                                    
+                                                    
+
+
+");
+        $expression->execute();
+        return $expression->fetchAll();
+    }
+
+    public static function readAll(){
+        $db = Db::getInstance();
         $expression = $db->prepare("select a.id,
                                                     a.name,
                                                     a.surname,
@@ -11,12 +31,10 @@ class Operator{
                                                     a.email,
                                                     a.role,
                                                     b.title
-                                                      
-                                                    from operator a 
+                                                     
+                                                    from operator a
                                                     left join team as b on b.id = a.favorite_team
-                                                    
-
-
+                                                   
 ");
         $expression->execute();
         return $expression->fetchAll();

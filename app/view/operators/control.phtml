@@ -11,15 +11,16 @@
 <select name="favorite_team" id="favorite_team">
     <option value="0">Choose</option>
 
-    <?php foreach(Operator::read() as $operator): ?>
+    <?php foreach(Team::readFavorite() as $team): ?>
 
         <option
 
-            <?php if(Request::post("manager") == $operator->id):?>
+            <?php if(Request::post("favorite_team") == $team->id):?>
                 selected="selected"
             <?php endif;?>
 
-                value="<?php echo $operator->id ?>"><?php echo $operator->favorite_team ?></option>
+                value="<?php echo $team->id ?>"><?php echo $team->title ?>
+        </option>
 
     <?php endforeach; ?>
 

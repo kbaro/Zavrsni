@@ -38,6 +38,41 @@ class Team
         return $expression->fetchAll();
     }
 
+    public static function readFavorite()
+    {
+
+        $db = Db::getInstance();
+        $expression = $db->prepare("
+        
+                    select 
+                    a.id,
+                    a.title,
+                    a.manager,
+                    a.ground,
+                    a.ground_capacity,
+                    a.since,
+                    a.logo,
+                    a.city,
+                    b.name,
+                    b.surname as manager
+                    from 
+                    team a left join manager b on b.id = a.manager
+                    group by 
+                    a.id,
+                    a.logo,
+                    a.title,
+                    a.manager,
+                    a.ground,
+                    a.ground_capacity,
+                    a.since,
+                    a.city
+                    order by a.title
+               
+        ");
+        $expression->execute();
+        return $expression->fetchAll();
+    }
+
     public static function readAll()
     {
 
