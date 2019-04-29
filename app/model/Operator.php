@@ -55,8 +55,7 @@ class Operator{
         name=:name,
         surname=:surname,
         favorite_team=:favorite_team,
-        email=:email,
-        password=:password
+        email=:email
         where id=:id");
         $data = self::data();
         $data["id"]=$id;
@@ -77,8 +76,7 @@ class Operator{
             "name"=>Request::post("name"),
             "surname"=>Request::post("surname"),
             "favorite_team"=>Request::post("favorite_team"),
-            "email"=>Request::post("email"),
-            "password"=>Request::post("password")
+            "email"=>Request::post("email")
         ];
     }
 
