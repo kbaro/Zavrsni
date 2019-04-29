@@ -30,7 +30,7 @@ class Operator{
                                                     a.favorite_team,
                                                     a.email,
                                                     a.role,
-                                                    b.title
+                                                    b.logo
                                                      
                                                     from operator a
                                                     left join team as b on b.id = a.favorite_team
